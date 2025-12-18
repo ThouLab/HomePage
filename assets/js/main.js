@@ -147,6 +147,8 @@
     items.forEach(el => io.observe(el));
   }
 
+  window.bindReveals = initReveal;
+
   // Boot
   document.addEventListener('DOMContentLoaded', () => {
     applyTheme(getThemePreference());

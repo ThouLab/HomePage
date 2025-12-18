@@ -106,6 +106,7 @@
         const data = await fetchJSON('content/columns/index.json');
         const posts = (data.posts || []).slice().sort(byDateDesc).slice(0,3);
         colHost.innerHTML = posts.map(renderPostCard).join('');
+        window.bindReveals?.(colHost);
       }catch(e){
         colHost.innerHTML = `<div class="notice">新着情報の読み込みに失敗しました。<br>GitHub Pages上では表示されますが、ローカルの file:// 直開きだとブラウザによっては読み込みが制限される場合があります。</div>`;
       }
@@ -118,6 +119,7 @@
         const data = await fetchJSON('content/products.json');
         const list = (data.products || []).filter(p => p.featured).slice(0,3);
         prodHost.innerHTML = list.map(renderProductCard).join('');
+        window.bindReveals?.(colHost);
       }catch(e){
         prodHost.innerHTML = `<div class="notice">プロダクトの読み込みに失敗しました。</div>`;
       }
@@ -130,6 +132,7 @@
         const data = await fetchJSON('content/members.json');
         const list = (data.members || []).slice(0,3);
         memHost.innerHTML = list.map(renderMemberCard).join('');
+        window.bindReveals?.(colHost);
       }catch(e){
         memHost.innerHTML = `<div class="notice">メンバーの読み込みに失敗しました。</div>`;
       }

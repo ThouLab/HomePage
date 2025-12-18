@@ -15,9 +15,9 @@
   --border: rgba(255,255,255,0.12);
   --border2: rgba(255,255,255,0.18);
 
-  --accent: #7c5cff;     /* violet */
-  --accent2: #00d3a7;    /* calm teal */
-  --accent3: #ffb86b;    /* warm highlight */
+  --accent: #515a9f;
+  --accent2: #cc9b11;
+  --accent3: #f6f7fb;
 
   --shadow: 0 12px 40px rgba(0,0,0,.35);
   --shadow2: 0 18px 60px rgba(0,0,0,.45);
@@ -328,6 +328,7 @@ button, input, textarea{ font: inherit; color:inherit; }
 .btn:hover{ background: var(--surface2); transform: translateY(-1px); }
 .btn:active{ transform: translateY(0px); }
 .btn.primary{
+  color: var(--bg);
   border: 1px solid color-mix(in srgb, var(--accent), white 10%);
   background: linear-gradient(90deg, color-mix(in srgb, var(--accent), transparent 15%), color-mix(in srgb, var(--accent2), transparent 18%));
 }
