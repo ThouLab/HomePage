@@ -1,0 +1,40 @@
+<footer class="footer">
+  <div class="container footer-inner">
+    <div style="max-width:60ch;">
+      <div class="brand" style="gap:10px;">
+        <img class="brand-logo" src="assets/img/logo.png" alt="ThouLab" />
+      </div>
+      <p class="small" style="margin-top:10px;">
+        ThouLab は、調べ、つくり、体験としてひらく場を提供します。<br>
+        本サイトはGitHub Pagesを介して公開されており、<br>
+        構造や仕組みはひらかれ、学びや再実装へとつながることを意図しています。<br>
+        ただし、ここで掲載されている各コンテンツの権利は<br>
+        それぞれの文脈・製作者・プロジェクトに帰属します。
+      </p>
+      <p class="small" style="margin-top:10px;">
+        © <span id="year"></span> ThouLab
+      </p>
+    </div>
+
+    <div>
+      <div class="pill"><span class="dot"></span><strong>Links</strong></div>
+      <div class="links" style="margin-top:10px;">
+        <a class="link" href="./">ホーム</a>
+        <a class="link" href="philosophy/">理念</a>
+        <a class="link" href="columns/">コラム</a>
+        <a class="link" href="members/">メンバー</a>
+        <a class="link" href="products/">プロダクト</a>
+        <a class="link" href="contact/">お問い合わせ</a>
+      </div>
+      <div class="links" style="margin-top:6px;">
+        <a class="link" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="link" href="https://x.com/" target="_blank" rel="noopener noreferrer">X</a>
+        <a class="link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</footer>

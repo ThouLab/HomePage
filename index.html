@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="site-base" content="">
+  <script>
+    (function(){
+      try{
+        var meta = document.querySelector('meta[name="site-base"]');
+        var manual = meta && meta.getAttribute('content') ? meta.getAttribute('content').trim() : '';
+        var base = manual || null;
+
+        if (!base){
+          var host = location.hostname;
+          var path = location.pathname;
+          base = '/';
+          if (host && host.endsWith('github.io')){
+            var parts = path.split('/').filter(Boolean);
+            if (parts.length > 0) base = '/' + parts[0] + '/';
+          }
+        }
+        if (!base.endsWith('/')) base += '/';
+
+        var el = document.createElement('base');
+        el.href = base;
+        document.head.appendChild(el);
+        window.__SITE_BASE__ = base.replace(/\/$/, '');
+      }catch(e){}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ThouLab | 対話がつくる、今日をさがす。</title>
+  <meta name="description" content="ThouLab は、調べ、つくり、体験としてひらく場を提供します。理念、コラム、メンバー、ワークショップを含むプロダクト、問い合わせの情報をまとめています。">
+  <meta property="og:title" content="ThouLab">
+  <meta property="og:description" content="対話がつくる、今日をさがす。">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0b0e14">
+  <link rel="icon" href="assets/img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body data-page="home">
+  <div id="site-header"></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-orb o1"></div>
+        <div class="hero-orb o2"></div>
+        <div class="hero-orb o3"></div>
+      </div>
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-inner">
+        <div class="reveal">
+          <div class="kicker"><span class="dot"></span>Explore × Embody × Experience</div>
+          <h1>対話がつくる、今日をさがす。</h1>
+          <p class="lead">
+            ThouLab は、調べ、つくり、体験としてひらく場を提供します。<br>
+            アイデアを形にするプロセスを、ワークショップやプロトタイプとして共有し、<br>
+            そこで生まれる発見や面白さを、対話を通じて育てていきます。<br>
+            昨日にはないワクワクを、ここから。
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="contact/">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.6"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              お問い合わせ
+            </a>
+            <a class="btn" href="products/">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              プロダクトを見る
+            </a>
+            <a class="btn" href="columns/">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 5h14v14H5V5Z" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              新着情報を見る
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-panel reveal" aria-label="ThouLabの概要">
+          <div class="hero-metrics">
+            <div class="metric">
+              <div class="label">暮らしの中の対話</div>
+              <div class="value">Living Dialogue</div>
+              <div class="note">家族、地域といった日常的な関係の中で生まれる対話を起点に、学びと創作の行き交う場をつくる。</div>
+            </div>
+            <div class="metric">
+              <div class="label">アイデアを形にする力</div>
+              <div class="value">Craft &amp; Making</div>
+              <div class="note">アイデアや問いにまず形をもたせる。完成を急がず、つくりながら考えるために技術を使う。</div>
+            </div>
+            <div class="metric">
+              <div class="label">生きた学び</div>
+              <div class="value">Living Learning</div>
+              <div class="note">学びを特別な時間に閉じず、暮らしの中へひらく。創作の中の発見を、次の対話につなげていく。</div>
+            </div>
+            <div class="metric">
+              <div class="label">発信と循環</div>
+              <div class="value">Open &amp; Reusable</div>
+              <div class="note">迷いや過程をたのしみ、共有する。ひとつの創作から、誰かの次の問いを生む。</div>
+            </div>
+          </div>
+
+          <hr class="sep">
+
+          <div class="metric">
+              <div class="label">対話がつくる、今日をさがす。</div>
+              <div class="value">ThouLab</div>
+              <div class="note">わたしたちは暮らしの中に対話と創作をひらき、今日が今日になる瞬間をふやす。小さな発見に形をもたせることで、明日につながる問いを育てる。</div>
+            </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Products | プロダクト</h2>
+            <p class="sub">
+              
+            </p>
+          </div>
+          <a class="btn" href="products/">一覧を見る</a>
+        </div>
+
+        <div id="home-products" class="grid cols-3">
+          <!-- rendered by content.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Philosophy | 理念</h2>
+            <p class="sub">
+              ThouLabの掲げる3つのE
+            </p>
+          </div>
+          <a class="btn" href="philosophy/">理念を読む</a>
+        </div>
+
+        <div class="grid cols-3">
+          <div class="card reveal">
+            <h3 class="title"></h3>
+            <p class="desc"></p>
+            <div class="meta"><span class="pill"><span class="dot"></span>Explore</span></div>
+          </div>
+          <div class="card reveal">
+            <h3 class="title"></h3>
+            <p class="desc"></p>
+            <div class="meta"><span class="pill"><span class="dot"></span>Embody</span></div>
+          </div>
+          <div class="card reveal">
+            <h3 class="title"></h3>
+            <p class="desc"></p>
+            <div class="meta"><span class="pill"><span class="dot"></span>Experience</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>News | 新着情報</h2>
+            <p class="sub">
+              
+            </p>
+          </div>
+          <a class="btn" href="columns/">すべて読む</a>
+        </div>
+
+        <div id="home-columns" class="grid cols-3">
+          <!-- rendered by content.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Members | メンバー</h2>
+            <p class="sub">
+              
+            </p>
+          </div>
+          <a class="btn" href="members/">メンバーを見る</a>
+        </div>
+
+        <div id="home-members" class="grid cols-3">
+          <!-- rendered by content.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="company">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <h2>Company | 会社情報</h2>
+            <p class="sub">
+              
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="card reveal" style="display:flex; gap:16px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+          <div style="min-width: 240px;">
+            <h2 style="margin:0;">Contact Us | お問い合わせ</h2>
+            <p class="sub" style="margin-top:8px;">
+              
+            </p>
+          </div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <a class="btn primary" href="contact/">お問い合わせページに進む</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script defer src="assets/js/markdown.js"></script>
+  <script defer src="assets/js/main.js"></script>
+  <script defer src="assets/js/motion.js"></script>
+  <script defer src="assets/js/content.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- NOTE: Replace example.com with your actual domain (or GitHub Pages URL). -->
+  <url><loc>https://example.com/</loc></url>
+  <url><loc>https://example.com/philosophy/</loc></url>
+  <url><loc>https://example.com/columns/</loc></url>
+  <url><loc>https://example.com/members/</loc></url>
+  <url><loc>https://example.com/products/</loc></url>
+  <url><loc>https://example.com/contact/</loc></url>
+</urlset>
