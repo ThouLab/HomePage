@@ -107,7 +107,7 @@
         const posts = (data.posts || []).slice().sort(byDateDesc).slice(0,3);
         colHost.innerHTML = posts.map(renderPostCard).join('');
       }catch(e){
-        colHost.innerHTML = `<div class="notice">コラムの読み込みに失敗しました。<br>GitHub Pages上では表示されますが、ローカルの file:// 直開きだとブラウザによっては読み込みが制限される場合があります。</div>`;
+        colHost.innerHTML = `<div class="notice">新着情報の読み込みに失敗しました。<br>GitHub Pages上では表示されますが、ローカルの file:// 直開きだとブラウザによっては読み込みが制限される場合があります。</div>`;
       }
     }
 
@@ -176,7 +176,7 @@
       host.innerHTML = `
         <div class="page-head">
           <div class="breadcrumbs">
-            <a href="./">ホーム</a> / <a href="columns/">コラム</a> / ${escapeHtml(post.title)}
+            <a href="./">ホーム</a> / <a href="columns/">新着情報</a> / ${escapeHtml(post.title)}
           </div>
           <h1>${escapeHtml(post.title)}</h1>
           <div class="post-meta">
