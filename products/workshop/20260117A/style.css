@@ -372,10 +372,12 @@
   font-weight: 600;
   line-height: 1.65;
   font-size: clamp(16px, 1.1vw, 18px);
-  white-space: normal;         /* allow wrapping to avoid overflow */
-  word-break: keep-all;        /* avoid awkward mid-word breaks in JP */
-  line-break: strict;
+
+  white-space: normal;      /* 自然改行 */
+  word-break: normal;       /* ← keep-all を外す */
+  line-break: strict;       /* 日本語禁則は維持 */
 }
+
 
 /* --- grid --- */
 #main .page-head .grid{
