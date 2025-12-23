@@ -68,7 +68,6 @@ Finder などで `index.html` を **file:// で直接開くと** うまく表示
 以下で簡易サーバを立てて確認してください。
 
 ```bash
-cd thoulab-site
 python -m http.server 8000
 # http://localhost:8000 を開く
 ```
