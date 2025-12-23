@@ -111,6 +111,8 @@
   font-size: clamp(28px, 4.2vw, 46px);
   letter-spacing: .01em;
   text-wrap: balance;
+  word-break: keep-all;
+  line-break: strict;
 }
 
 #main .page-head h1::after{
@@ -253,7 +255,12 @@
   margin: 0;
   color: var(--evt-ink);
   font-weight: 600;
-  line-height: 1.75;
+  line-height: 1.65;
+  font-size: clamp(16px, 1.1vw, 18px);
+  white-space: normal;         /* allow wrapping to avoid overflow */
+  text-wrap: balance;          /* balance line lengths */
+  word-break: keep-all;        /* avoid awkward mid-word breaks in JP */
+  line-break: strict;
 }
 
 /* --- grid --- */
@@ -369,7 +376,7 @@
 #main .page-head .cta-title{
   margin: 0 0 8px;
   font-size: 18px;
-  color: var(--evt-ink);
+  color: #ffffff; /* override to black for this CTA heading */
 }
 #main .page-head .cta-text{
   margin: 0;
