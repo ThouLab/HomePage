@@ -81,6 +81,7 @@
   display: inline-flex;
   gap: 10px;
   align-items: center;
+  margin-bottom: 25px; /* add space before headline */
 
   padding: 10px 14px;
   border-radius: 999px;
@@ -129,7 +130,7 @@
 /* --- Hero image: framed like a poster --- */
 #main .page-head .hero-media{
   position: relative;
-  margin: 18px auto 24px;   /* ← 中央寄せ */
+  margin: 18px auto 24px;   /* default: centered block */
   max-width: 800px;        /* ← チラシ感の核心 */
   width: 100%;
   border-radius: calc(var(--evt-radius) + 10px);
@@ -137,6 +138,120 @@
   background: rgba(255,255,255,.55);
   border: 1px solid rgba(18,22,30,.12);
   box-shadow: var(--evt-shadow-soft);
+}
+
+/* smaller variant for inline use */
+#main .page-head .hero-media.hero-media--small{
+  max-width: 460px;
+  width: 100%;
+}
+
+/* tiny variant to place next to headline */
+#main .page-head .hero-media.hero-media--tiny{
+  max-width: 160px;
+  width: 24vw;
+  margin: 0;
+  flex-shrink: 0; /* avoid shrinking when space is tight */
+}
+#main .page-head .hero-media.hero-media--tiny img{
+  width: 100%;
+  height: auto;
+}
+
+/* layout for headline + thumbnail */
+#main .page-head .headline-block{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: nowrap;   /* keep title and thumbnail on one line */
+}
+#main .page-head .headline-block h1{
+  margin: 0;
+}
+
+/* split layout: left (headline+callout), right (flyer) */
+#main .page-head .hero-split{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+#main .page-head .hero-left{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+#main .page-head .hero-right{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#main .page-head .hero-right .hero-media{
+  margin: 0;
+}
+
+@media (max-width: 900px){
+  #main .page-head .hero-split{
+    grid-template-columns: 1fr;
+  }
+  #main .page-head .hero-right .hero-media{
+    max-width: 360px;
+    width: 80%;
+  }
+}
+
+/* --- Lightbox for flyer --- */
+#flyer-lightbox{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+#flyer-lightbox[aria-hidden="false"]{
+  pointer-events: auto;
+  opacity: 1;
+}
+#flyer-lightbox .lightbox-backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(4px);
+}
+#flyer-lightbox .lightbox-body{
+  position: relative;
+  max-width: 80vw;
+  max-height: 80vh;
+  border-radius: 20px;
+  overflow: scroll; /* allow scrolling when image is larger than viewport */
+  box-shadow: var(--evt-shadow2, 0 18px 60px rgba(0,0,0,.45));
+  background: #000;
+}
+#flyer-lightbox img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  background: #000;
+}
+#main .page-head .hero-flyer{
+  cursor: zoom-in;
+}
+
+@media (max-width: 900px){
+  #main .page-head .headline-block{
+    flex-wrap: wrap;      /* allow stacking on smaller screens */
+    gap: 12px;
+  }
+  #main .page-head .hero-media.hero-media--tiny{
+    width: 60vw;
+    max-width: 260px;
+  }
 }
 
 #main .page-head .hero-media img{
@@ -244,7 +359,7 @@
 
 /* --- callout = sticky note --- */
 #main .page-head .callout{
-  margin-top: 14px;
+  margin-top: 18px;
   padding: 16px 18px;
   border-radius: var(--evt-radius);
   background: linear-gradient(180deg, rgba(243,180,78,.35), rgba(243,180,78,.18));
@@ -258,7 +373,6 @@
   line-height: 1.65;
   font-size: clamp(16px, 1.1vw, 18px);
   white-space: normal;         /* allow wrapping to avoid overflow */
-  text-wrap: balance;          /* balance line lengths */
   word-break: keep-all;        /* avoid awkward mid-word breaks in JP */
   line-break: strict;
 }
@@ -378,6 +492,15 @@
   font-size: 18px;
   color: #ffffff; /* override to black for this CTA heading */
 }
+
+#main .page-head .cta-text_link{
+  margin: 0;
+  color: var(--evt-ink);
+  line-height: 1.8;
+  font-weight: 600;
+  font-size: 25px;
+}
+
 #main .page-head .cta-text{
   margin: 0;
   color: var(--evt-ink);

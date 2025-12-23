@@ -45,13 +45,29 @@
         <div class="breadcrumbs">
             <a href="./">ホーム</a> / プロダクト / ワークショップ / 2026年1月17日
         </div>
-        <h1>親子で楽しむ！会話ロボットを作ってみよう！</h1>
-
-
-        <div class="callout">
-            <p class="lead">
-            3Dプリント技術と自然言語処理（LLM）を使って、親子で「会話ロボット」をつくる体験型ワークショップです。つくる→試す→ことばを調整する、という流れで “学びがその場で動く” 体験を用意しています。
-            </p>
+        <div class="hero-split">
+          <div class="hero-left">
+            <div class="headline-block">
+              <h1>親子で楽しむ！会話ロボットを作ってみよう！</h1>
+            </div>
+            <div class="callout">
+                <p class="lead">
+                3Dプリント技術と自然言語処理（LLM）を使って、親子で「会話ロボット」をつくる体験型ワークショップです。つくる→試す→ことばを調整する、という流れで “自分が設定した会話ロボットが喋る” 体験を用意しています。
+                </p>
+            </div>
+          </div>
+          <div class="hero-right">
+            <figure class="hero-media hero-media--small reveal" aria-label="イベント告知画像">
+              <!-- 画像は差し替えてください（例：assets/img/workshops/2026-01-17.png） -->
+              <img
+                  class="hero-flyer"
+                  src="/assets/img/workshops/2026-01-17.png"
+                  alt="親子で楽しむ！会話ロボットを作ってみよう！ワークショップ告知"
+                  loading="lazy"
+              />
+              <figcaption class="muted">※チラシ画像</figcaption>
+            </figure>
+          </div>
         </div>
         </section>
 
@@ -97,8 +113,10 @@
         <section class="section reveal" aria-label="応募への導線">
             <div class="cta card">
                 <h2 class="cta-title">参加をご希望の方へ</h2>
-                <p class="cta-text">
+                <p class="cta-text_link">
                     <a href="https://x.gd/workshop0117">こちらをクリック！</a> <br />
+                </p>
+                <p class="cta-text">
                 <span class="muted">締切：2026年1月10日（土）</span>
                 </p>
             </div>
@@ -128,12 +146,7 @@
             </div>
         </div>
 
-        <div class="badge-line" aria-label="補足">
-            <span class="badge">持ち帰り可</span>
-            <span class="muted">作った会話ロボットは持ち帰り可能です。</span>
-        </div>
         </section>
-
         <!-- 本ワークショップについて -->
         <section class="section reveal" aria-labelledby="about">
         <h2 id="about">本ワークショップについて</h2>
@@ -267,18 +280,7 @@
             </p>
             </details>
         </div>
-                <!-- ヒーロー画像（最初に大きく） -->
-        <figure class="hero-media reveal" aria-label="イベント告知画像">
-        <!-- 画像は差し替えてください（例：assets/img/workshops/2026-01-17.png） -->
-        <img
-            src="/assets/img/workshops/2026-01-17.png"
-            alt="親子で楽しむ！会話ロボットを作ってみよう！ワークショップ告知"
-            loading="lazy"
-        />
-        <figcaption class="muted">※チラシ画像</figcaption>
-        </figure>
 
-        </section>
 
 
 
@@ -287,10 +289,43 @@
     </div>
   </main>
 
+  <!-- flyer lightbox -->
+  <div id="flyer-lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-body" role="dialog" aria-label="チラシ画像拡大">
+      <img src="/assets/img/workshops/2026-01-17.png" alt="チラシ画像拡大表示">
+    </div>
+  </div>
+
   <div id="site-footer"></div>
 
   <script defer src="/assets/js/markdown.js"></script>
   <script defer src="/assets/js/main.js"></script>
   <script defer src="/assets/js/content.js"></script>
+  <script>
+    (function(){
+      var thumb = document.querySelector('.hero-flyer');
+      var lightbox = document.getElementById('flyer-lightbox');
+      if (!thumb || !lightbox) return;
+      var backdrop = lightbox.querySelector('.lightbox-backdrop');
+
+      function openLightbox(){
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox(){
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+      thumb.addEventListener('click', openLightbox);
+      backdrop.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e){
+        if (e.target === lightbox) closeLightbox();
+      });
+      window.addEventListener('keydown', function(e){
+        if (e.key === 'Escape') closeLightbox();
+      });
+    })();
+  </script>
 </body>
 </html>
