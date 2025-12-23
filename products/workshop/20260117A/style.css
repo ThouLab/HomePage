@@ -112,6 +112,7 @@
   letter-spacing: .01em;
   text-wrap: balance;
 }
+
 #main .page-head h1::after{
   content:"";
   display:block;
@@ -126,20 +127,21 @@
 /* --- Hero image: framed like a poster --- */
 #main .page-head .hero-media{
   position: relative;
-  margin: 18px 0 24px;
+  margin: 18px auto 24px;   /* ← 中央寄せ */
+  max-width: 800px;        /* ← チラシ感の核心 */
+  width: 100%;
   border-radius: calc(var(--evt-radius) + 10px);
   overflow: hidden;
   background: rgba(255,255,255,.55);
   border: 1px solid rgba(18,22,30,.12);
   box-shadow: var(--evt-shadow-soft);
 }
+
 #main .page-head .hero-media img{
-  display:block;
-  width:100%;
-  height:auto;
-  /* allow big visual impact */
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain; 
 }
 #main .page-head .hero-media .muted{
   display:block;
