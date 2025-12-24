@@ -289,11 +289,8 @@
         </div>
         <div class="post">
           <div class="post-content">${html}</div>
-          <hr class="sep">
-          <div class="notice">
-            フィードバック歓迎です。<a href="${escapeHtml(absPath('contact/'))}">お問い合わせ</a>から気軽にご連絡ください。
-          </div>
         </div>
+        <a class="btn" href="news/">◀ ニュースの一覧に戻る</a>
       `;
     }catch(e){
       host.innerHTML = `<div class="notice">記事の読み込みに失敗しました。</div>`;

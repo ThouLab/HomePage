@@ -432,7 +432,7 @@ button, input, textarea{ font: inherit; color:inherit; }
 .btn:hover{ background: var(--surface2); transform: translateY(-1px); }
 .btn:active{ transform: translateY(0px); }
 .btn.primary{
-  color: var(--bg);
+  color: rgba(255,255,255,0.92);
   border: 1px solid color-mix(in srgb, var(--accent), white 10%);
   background: linear-gradient(90deg, color-mix(in srgb, var(--accent), transparent 15%), color-mix(in srgb, var(--accent2), transparent 18%));
 }
