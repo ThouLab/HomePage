@@ -309,6 +309,10 @@
   border-radius: var(--evt-radius);
   padding: clamp(14px, 2.8vw, 20px);
   box-shadow: var(--evt-shadow-soft);
+  white-space: normal;      /* 自然改行 */
+  word-break: normal;       /* ← keep-all を外す */
+  line-break: normal;       /* 日本語禁則は維持 */
+
 }
 
 /* typography inside cards */
