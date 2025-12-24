@@ -192,7 +192,7 @@ button, input, textarea{ font: inherit; color:inherit; }
   top: 12px;
   width: min(92vw, 380px);
   border: 1px solid var(--border);
-  background: color-mix(in srgb, var(--bg2), transparent 8%);
+  background: color-mix(in srgb, var(--bg2), transparent 4%);
   border-radius: var(--radius);
   box-shadow: var(--shadow2);
   padding: 14px;
@@ -209,6 +209,107 @@ button, input, textarea{ font: inherit; color:inherit; }
   background: var(--surface);
 }
 .mobile-drawer .nav a:hover{ background: var(--surface2); }
+
+/* ===== Mobile drawer: refined menu ===== */
+.mobile-drawer{
+  padding: 16px;
+}
+
+.mobile-drawer .nav{
+  margin-top: 12px;
+  gap: 10px;            /* 詰まりすぎを避ける */
+}
+
+/* カードっぽい質感を整理：厚みは最小、線は繊細に */
+.nav-mobile a{
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 14px;
+  border-radius: 16px;
+
+  background: color-mix(in srgb, var(--bg2), var(--surface) 55%);
+  border: 1px solid color-mix(in srgb, var(--border), transparent 10%);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset;
+
+  color: var(--text);
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+
+/* 左の“アクセントバー”で選択感を出す（上品） */
+.nav-mobile a::before{
+  content:"";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  width: 3px;
+  height: 18px;
+  border-radius: 999px;
+  transform: translateY(-50%);
+  opacity: 0;
+  background: linear-gradient(180deg, var(--accent), var(--accent2));
+}
+
+/* アイコン：線を軽く、存在感は出す */
+.nav-mobile a svg{
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+
+  stroke: currentColor;
+  stroke-width: 1.55;
+  fill: none;
+  opacity: 0.82;
+}
+
+/* テキスト：少しだけ締める */
+.nav-mobile a span{
+  font-size: 16px;
+  letter-spacing: .01em;
+}
+
+/* Hover/Press：わずかな浮きと面の変化だけ */
+.nav-mobile a:hover{
+  background: color-mix(in srgb, var(--bg2), var(--surface2) 72%);
+  border-color: color-mix(in srgb, var(--border2), transparent 8%);
+  transform: translateY(-1px);
+}
+.nav-mobile a:active{
+  transform: translateY(0px);
+}
+
+/* 現在地：バー＋背景を少しだけ強く（やりすぎない） */
+.nav-mobile a[aria-current="page"]{
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent), transparent 92%),
+    color-mix(in srgb, var(--accent2), transparent 94%)
+  );
+  border-color: color-mix(in srgb, var(--border2), transparent 0%);
+}
+.nav-mobile a[aria-current="page"]::before{
+  opacity: 1;
+}
+
+/* フォーカス（キーボード操作対応も上品に） */
+.nav-mobile a:focus-visible{
+  outline: none;
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--accent2), transparent 70%),
+    0 1px 0 rgba(255,255,255,0.04) inset;
+}
+
+.nav-mobile a.nav-home{
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--accent), transparent 94%),
+    color-mix(in srgb, var(--accent2), transparent 96%)
+  );
+  border-color: color-mix(in srgb, var(--border2), transparent 0%);
+}
+
 
 .hero{
   position: relative;
@@ -653,9 +754,22 @@ input:focus, textarea:focus{
   .grid.cols-3{ grid-template-columns: 1fr; }
   .grid.cols-2{ grid-template-columns: 1fr; }
   .split{ grid-template-columns: 1fr; }
-  .nav{ display:none; }
-  .hamburger{ display:inline-flex; }
 }
+
+/* Header nav: narrow screens use hamburger (PC/モバイル共通) */
+@media (max-width: 1060px){
+  .header-inner > .nav{ display:none; }   /* PC用ナビだけ隠す */
+  .hamburger{ display:inline-flex; }      /* ハンバーガー表示 */
+}
+@media (min-width: 1061px){
+  .header-inner > .nav{ display:flex; }   /* PC用ナビ表示 */
+  .hamburger{ display:none; }             /* ハンバーガー非表示 */
+}
+
+
+
+
+
 
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
