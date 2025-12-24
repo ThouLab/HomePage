@@ -274,6 +274,8 @@
 
       const md = await fetchText(`content/columns/${encodeURIComponent(slug)}.md`);
       const html = window.ThouMarkdown ? window.ThouMarkdown.mdToHtml(md) : `<pre>${escapeHtml(md)}</pre>`;
+      let contenttype;
+      if (post.news){contenttype = "ニュース"} else {contenttype = "コラム"};
 
       host.innerHTML = `
         <div class="page-head">
@@ -290,7 +292,7 @@
         <div class="post">
           <div class="post-content">${html}</div>
         </div>
-        <a class="btn" href="news/">◀ ニュースの一覧に戻る</a>
+        <a class="btn" href="news/">◀ ${contenttype}の一覧に戻る</a>
       `;
     }catch(e){
       host.innerHTML = `<div class="notice">記事の読み込みに失敗しました。</div>`;
