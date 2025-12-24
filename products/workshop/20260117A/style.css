@@ -377,9 +377,7 @@
   line-height: 1.65;
   font-size: clamp(16px, 1.1vw, 18px);
 
-  white-space: normal;      /* 自然改行 */
-  word-break: normal;       /* ← keep-all を外す */
-  line-break: strict;       /* 日本語禁則は維持 */
+  word-break: keep-all;
 }
 
 

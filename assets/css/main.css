@@ -282,8 +282,11 @@ button, input, textarea{ font: inherit; color:inherit; }
 .hero p.lead{
   margin: 0 0 20px;
   color: var(--muted);
-  font-size: clamp(15px, 1.6vw, 18px);
+  font-size: 16px;
   line-height: 1.7;
+  word-break: keep-all;
+  text-wrap: pretty;   
+
 }
 .kicker{
   display:inline-flex;
