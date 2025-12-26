@@ -72,17 +72,9 @@
       </div>
     </section>
 
-    <div class="scroll-cue" id="scrollCue" aria-hidden="true">
-      <div class="scroll-cue__pill">
-        <span class="scroll-cue__dot"></span>
-        <span class="scroll-cue__text">もっと詳しく！</span>
-        <span class="scroll-cue__chev">☟</span>
-      </div>
-    </div>
-
     <section class="section">
       <div class="container">
-        <div class="section-head reveal">
+        <div class="section-head">
           <div>
             <h2>Products | プロダクト</h2>
             <p class="sub">
@@ -123,15 +115,4 @@
   <script defer src="assets/js/motion.js"></script>
   <script defer src="assets/js/content.js"></script>
 </body>
-<script>
-  (function(){
-    const el = document.getElementById('scrollCue');
-    if(!el) return;
-    const hide = () => {
-      if (window.scrollY > 40) el.style.display = 'none';
-    };
-    window.addEventListener('scroll', hide, { passive: true });
-    hide();
-  })();
-</script>
 </html>
