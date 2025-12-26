@@ -784,3 +784,49 @@ input:focus, textarea:focus{
 @media (max-width: 480px) {
   .brand-logo { height: 24px; }
 }
+
+
+/* スクロール促し */
+.scroll-cue{
+  display: flex;
+  justify-content: center;
+  margin: 14px 0 6px;
+}
+
+.scroll-cue__pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 14px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.72);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,.10);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  font-size: 13px;
+  line-height: 1;
+  color: rgba(0,0,0,.70);
+
+  animation: scrollCueFloat 1.6s ease-in-out infinite;
+}
+
+.scroll-cue__dot{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent, #515a9f);
+  box-shadow: 0 0 0 6px rgba(81,90,159,.18);
+}
+
+.scroll-cue__chev{
+  display: inline-block;
+  font-size: 16px;
+  transform: translateY(0);
+  animation: scrollCueChev 1.2s ease-in-out infinite;
+  opacity: .85;
+}
