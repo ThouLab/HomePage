@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="site-base" content="">
+  <script>
+    (function(){
+      try{
+        var meta = document.querySelector('meta[name="site-base"]');
+        var manual = meta && meta.getAttribute('content') ? meta.getAttribute('content').trim() : '';
+        var base = manual || null;
+
+        if (!base){
+          var host = location.hostname;
+          var path = location.pathname;
+          base = '/';
+          if (host && host.endsWith('github.io')){
+            var parts = path.split('/').filter(Boolean);
+            if (parts.length > 0) base = '/' + parts[0] + '/';
+          }
+        }
+        if (!base.endsWith('/')) base += '/';
+
+        var el = document.createElement('base');
+        el.href = base;
+        document.head.appendChild(el);
+        window.__SITE_BASE__ = base.replace(/\/$/, '');
+      }catch(e){}
+    })();
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>クオッカイラスト一覧 | ThouLab</title>
+  <meta name="description" content="クオッカのLINEスタンプ用イラスト一覧。">
+  <link rel="icon" href="/assets/img/logo_tab.png" type="image/png">
+
+  <link rel="stylesheet" href="/assets/css/main.css"/>
+  <link rel="stylesheet" href="/assets/img/quokka/style.css"/>
+  
+</head>
+
+<body data-page="quokka-stamps">
+  <!-- ★ 共通ヘッダー -->
+  <div id="site-header"></div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-text">
+        <h1>クオッカイラスト一覧</h1>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs000.png" alt="監督クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">監督クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs001.png" alt="運動クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">運動クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs002.png" alt="読書クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">読書クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs003.png" alt="温泉クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">温泉クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs004.png" alt="孤独クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">孤独クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs005.png" alt="真夏クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">真夏クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs006.png" alt="真冬クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">真冬クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs007.png" alt="多忙クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">多忙クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs008.png" alt="睡眠クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">睡眠クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs009.png" alt="演奏クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">演奏クオッカ</h3>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <a class="thumb" href="#" aria-label="スタンプ詳細へ（任意）">
+          <img src="assets/img/quokka/qs010.png" alt="衰弱クオッカ" loading="lazy">
+        </a>
+        <div class="card-body">
+          <div class="title-row">
+            <h3 class="card-title">衰弱クオッカ</h3>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- ★ 共通フッター -->
+  <div id="site-footer"></div>
+
+  <!-- ★ membersと同じ共通JS（ヘッダー/フッター描画に必要） -->
+  <script defer src="assets/js/main.js"></script>
+
+  <!-- （任意）このページは content.js 不要なら消してOK -->
+  <!-- <script defer src="assets/js/content.js"></script> -->
+</body>
+</html>
