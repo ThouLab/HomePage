@@ -18,6 +18,18 @@
       "status": "参加申し込み受付開中！",
       "featured": true,
       "link": "products/workshop/20260117A"
+    },
+    {
+      "category": "Workshop | ワークショップ",
+      "name": "お守りクオッカ",
+      "summary": "かわいいマスコットキャラクターたちが活躍中！",
+      "detail": "",
+      "tags": [
+        "お守りクオッカ"
+      ],
+      "status": "準備中",
+      "featured": false,
+      "link": "assets/img/quokka"
     }
   ]
 }
