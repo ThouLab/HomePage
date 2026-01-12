@@ -35,14 +35,16 @@
       id: "samba-4738-10",
       number: "第1問　☆☆☆☆☆（超難問）",
       title: "夜な夜なサンバ",
-      prompt: "テンパズル：4,7,3,8を使って答えが10になる計算式をつくれるかな？",
+      prompt: "4,7,3,8を使って答えが10になる計算式をつくれるかな？",
       giverStamp: 2, // ← 002 のキャラが出題
       target: 10,
       requiredDigits: ["4", "7", "3", "8"],
       rules: [
-        "4, 7, 3, 8 をそれぞれ1回ずつ使う",
+        "4, 7, 3, 8 をそれぞれ1回ずつ使って計算式を作ろう",
         "使えるのは + − × ÷ と ( )",
-        "答えは 10",
+        "式を作ったら「判定」をしよう",
+        "答えが 10になったら認定証GET！",
+        "認定証に記載されるニックネームの入力もお忘れなく！",
       ],
       shareText:
         "クオッカからの挑戦状「夜な夜なサンバ」をクリアしたぞ！ #おまもりクオッカ",
@@ -72,7 +74,7 @@
 
     if (LINE_STAMP_URL && LINE_STAMP_URL.trim()) {
       link.href = LINE_STAMP_URL.trim();
-      link.textContent = "スタンプ購入";
+      link.textContent = "購入";
       link.setAttribute("aria-disabled", "false");
       link.classList.remove("is-disabled");
     } else {
