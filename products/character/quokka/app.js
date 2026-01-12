@@ -13,11 +13,11 @@
   const LINE_STAMP_URL = "https://line.me/S/sticker/32551910?_from=lcm";
 
   const STAMP_COUNT = 16;
-  const STAMP_DIR = "assets/img/quokka/";
+  const STAMP_DIR = "/assets/img/quokka/";
   const STAMP_PREFIX = "qs";
   const STAMP_EXT = ".png";
 
-  const CERT_LOGO_SRC = "assets/img/logo.png";
+  const CERT_LOGO_SRC = "/assets/img/logo.png";
 
   const stampPath = (index) =>
     `${STAMP_DIR}${STAMP_PREFIX}${String(index).padStart(3, "0")}${STAMP_EXT}`;
@@ -656,7 +656,7 @@
 
     // Optional bg image (if exists)
     try {
-      const bg = await loadImage("assets/img/quokka/hpbg.png");
+      const bg = await loadImage("/assets/img/quokka/hpbg.png");
       drawCover(ctx, bg, 0, 0, w, h, 0.18);
     } catch (e) {
       // ignore
