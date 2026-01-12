@@ -6,6 +6,19 @@
   },
   "products": [
     {
+      "category": "Character | キャラクター",
+      "name": "おまもりクオッカ！",
+      "summary": "どこか間の抜けたクオッカワラビーたち",
+      "detail": "LINEスタンプやクイズで、日常にちょっとした盛り上がりを届けるクオッカたち。旅行に向かう車の中や、LINEでのやり取りの中で、「ちょっとみんなで考える」「ちょっと笑う」瞬間を生み出すことを目指しています。特別な準備はいらず、ふとした時間が急に少し楽しくなる。おまもりクオッカたちは、そんな日常のそばにいる存在です。",
+      "tags": [
+        "LINEスタンプ",
+        "クイズ"
+      ],
+      "status": "",
+      "featured": true,
+      "link": "products/character/quokka"
+    },
+    {
       "category": "Workshop | ワークショップ",
       "name": "親子で楽しむ！会話ロボットを作ってみよう！",
       "summary": "親子向けロボット製作体験会をロボリンクで開催！",
@@ -15,21 +28,9 @@
         "3Dプリンター",
         "ロボット"
       ],
-      "status": "参加申し込み受付開中！",
+      "status": "申し込み受付終了",
       "featured": true,
       "link": "products/workshop/20260117A"
-    },
-    {
-      "category": "Workshop | ワークショップ",
-      "name": "お守りクオッカ",
-      "summary": "かわいいマスコットキャラクターたちが活躍中！",
-      "detail": "",
-      "tags": [
-        "お守りクオッカ"
-      ],
-      "status": "準備中",
-      "featured": false,
-      "link": "assets/img/quokka"
     }
   ]
 }

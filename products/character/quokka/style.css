@@ -1,0 +1,362 @@
+/* Omamori Quokka — special page overrides for ThouLab
+   - Keep the site's world view / variables from main.css
+   - Only touch what this page needs
+*/
+
+.quokka-page .page-head p{
+  max-width: 80ch;
+}
+
+/* ===== Feature (hero-like) ===== */
+.quokka-feature{
+  position: relative;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg2), transparent 10%);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+/* Background image */
+.quokka-feature__bg{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.quokka-feature__bg img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.03);
+  opacity: .18;
+  filter: saturate(1.08) contrast(1.05);
+}
+.quokka-feature::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(90deg,
+      color-mix(in srgb, var(--bg2), transparent 6%) 0%,
+      color-mix(in srgb, var(--bg2), transparent 36%) 50%,
+      color-mix(in srgb, var(--bg2), transparent 8%) 100%);
+}
+
+.quokka-feature__inner{
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 16px;
+  padding: clamp(16px, 2.4vw, 22px);
+  align-items: start;
+}
+
+.quokka-feature__title{
+  margin: 0 0 10px;
+  font-size: clamp(18px, 2.4vw, 26px);
+  letter-spacing: -0.01em;
+}
+
+.quokka-tags{
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quokka-feature__panel{
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg2), transparent 10%);
+  padding: 14px;
+}
+
+.quokka-note{
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.quokka-thumbrow{
+  display:flex;
+  gap: 10px;
+  overflow:auto;
+  padding-bottom: 6px;
+  scrollbar-width: thin;
+}
+.quokka-thumb{
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 8px 24px rgba(0,0,0,.18);
+  padding: 6px;
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+.quokka-thumb:hover{
+  transform: translateY(-1px);
+  background: var(--surface2);
+  border-color: var(--border2);
+}
+.quokka-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display:block;
+}
+
+/* ===== Stamps grid ===== */
+.quokka-stamp-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+@media (max-width: 920px){
+  .quokka-feature__inner{ grid-template-columns: 1fr; }
+  .quokka-stamp-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 520px){
+  .quokka-stamp-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* stamp tile button */
+.quokka-stamp{
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg2), transparent 12%);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  overflow:hidden;
+  padding: 10px;
+  cursor:pointer;
+  transition: transform .15s ease, border-color .2s ease, background .2s ease;
+}
+.quokka-stamp:hover{
+  transform: translateY(-2px);
+  border-color: var(--border2);
+  background: color-mix(in srgb, var(--bg2), transparent 7%);
+}
+.quokka-stamp img{
+  width:100%;
+  height:100%;
+  object-fit: contain;
+  display:block;
+}
+
+/* ===== Lightbox ===== */
+.quokka-lightbox{
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+}
+.quokka-lightbox[aria-hidden="false"]{
+  display: grid;
+  place-items: center;
+}
+.quokka-lightbox__backdrop{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(8px);
+}
+.quokka-lightbox__panel{
+  position: relative;
+  width: min(92vw, 720px);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg2), transparent 6%);
+  box-shadow: var(--shadow2);
+  padding: 14px;
+}
+.quokka-lightbox__close{
+  position:absolute;
+  right: 12px;
+  top: 12px;
+}
+.quokka-lightbox__panel img{
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display:block;
+  padding: 10px;
+}
+.quokka-lightbox__caption{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* ===== LINE link disabled ===== */
+#line-stamp-link.is-disabled{
+  opacity: .62;
+  pointer-events: none;
+}
+
+/* ===== Challenge card ===== */
+.quokka-challenge-card{
+  padding: 16px;
+}
+
+.quokka-challenge-head{
+  display: grid;
+  grid-template-columns: 86px 1fr;
+  gap: 14px;
+  align-items: start;
+}
+@media (max-width: 520px){
+  .quokka-challenge-head{ grid-template-columns: 74px 1fr; }
+}
+
+.quokka-avatar{
+  width: 86px;
+  height: 86px;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.quokka-avatar img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+  display:block;
+}
+
+.quokka-bubble{
+  position: relative;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg2), var(--surface) 70%);
+  padding: 12px 14px;
+}
+.quokka-bubble::before{
+  content:"";
+  position:absolute;
+  left: -8px;
+  top: 26px;
+  width: 16px;
+  height: 16px;
+  background: color-mix(in srgb, var(--bg2), var(--surface) 70%);
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transform: rotate(45deg);
+}
+
+.quokka-bubble__kicker{
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: .03em;
+}
+.quokka-bubble__title{
+  margin: 6px 0 6px;
+  font-size: 18px;
+}
+.quokka-bubble__prompt{
+  margin: 0;
+  color: var(--text);
+  line-height: 1.65;
+}
+
+.quokka-pills{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.quokka-challenge-body{
+  margin-top: 14px;
+}
+
+.quokka-rules{
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 10px 12px;
+  background: var(--surface);
+}
+.quokka-rules summary{
+  cursor: pointer;
+  color: var(--text);
+  font-weight: 650;
+}
+.quokka-rules ul{
+  margin: 10px 0 0 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* Answer row */
+.quokka-answer-row{
+  display:flex;
+  gap: 10px;
+  align-items:center;
+  flex-wrap: wrap;
+}
+
+.quokka-feedback{
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  line-height: 1.7;
+}
+.quokka-feedback.ok{
+  border-color: color-mix(in srgb, var(--accent2), transparent 25%);
+  background: color-mix(in srgb, var(--accent2), transparent 88%);
+  color: var(--text);
+}
+.quokka-feedback.ng{
+  border-color: rgba(255, 120, 120, .38);
+  background: rgba(255, 120, 120, .08);
+  color: var(--text);
+}
+
+.quokka-cert{
+  margin-top: 12px;
+}
+.quokka-cert__head{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.quokka-cert img{
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  display:block;
+}
+.quokka-cert-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.quokka-small{
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  .quokka-thumb, .quokka-stamp{ transition: none; }
+}
