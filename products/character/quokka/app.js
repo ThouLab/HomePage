@@ -58,7 +58,6 @@
   const qs = (sel, root = document) => root.querySelector(sel);
 
   document.addEventListener("DOMContentLoaded", () => {
-    initLineStampLink();
     renderStampThumbs();
     renderStampGrid();
     setupLightbox();
@@ -67,23 +66,6 @@
     const countEl = qs("#challenge-count");
     if (countEl) countEl.textContent = String(CHALLENGES.length);
   });
-
-  function initLineStampLink() {
-    const link = qs("#line-stamp-link");
-    if (!link) return;
-
-    if (LINE_STAMP_URL && LINE_STAMP_URL.trim()) {
-      link.href = LINE_STAMP_URL.trim();
-      link.textContent = "購入";
-      link.setAttribute("aria-disabled", "false");
-      link.classList.remove("is-disabled");
-    } else {
-      link.href = "javascript:void(0)";
-      link.textContent = "LINEリンク準備中";
-      link.setAttribute("aria-disabled", "true");
-      link.classList.add("is-disabled");
-    }
-  }
 
   function renderStampThumbs() {
     const wrap = qs("#stamp-thumbs");
