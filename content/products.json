@@ -6,6 +6,19 @@
   },
   "products": [
     {
+      "category": "Workshop | ワークショップ",
+      "name": "3Dプリンターでオリジナルフィギュアを作ろう！",
+      "summary": "3月1日（土）、3D印刷体験会をLuz湘南辻堂で開催！",
+      "detail": "マイクラのようにブロックを組み立てるアプリ「Q-BU」で設計し、それを3Dプリンターで印刷できる小学校低学年向けのワークショップです。",
+      "tags": [
+        "3Dモデリング",
+        "3Dプリンター"
+      ],
+      "status": "申し込み受付中！",
+      "featured": true,
+      "link": "products/workshop/20260301A"
+    },
+    {
       "category": "Tool | ツール",
       "name": "Q-BU",
       "summary": "キューブを繋げて3D印刷できる、超入門者向けCADソフト",

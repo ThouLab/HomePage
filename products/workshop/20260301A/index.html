@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="site-base" content="">
+  <script>
+    (function(){
+      try{
+        var meta = document.querySelector('meta[name="site-base"]');
+        var manual = meta && meta.getAttribute('content') ? meta.getAttribute('content').trim() : '';
+        var base = manual || null;
+
+        if (!base){
+          var host = location.hostname;
+          var path = location.pathname;
+          base = '/';
+          if (host && host.endsWith('github.io')){
+            var parts = path.split('/').filter(Boolean);
+            if (parts.length > 0) base = '/' + parts[0] + '/';
+          }
+        }
+        if (!base.endsWith('/')) base += '/';
+
+        var el = document.createElement('base');
+        el.href = base;
+        document.head.appendChild(el);
+        window.__SITE_BASE__ = base.replace(/\/$/, '');
+      }catch(e){}
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>3Dプリンターでオリジナルフィギュアを作ろう！ | ThouLab</title>
+  <meta name="description" content="親子向け3D印刷体験会。2026年3月1日にロボリンクで開催">
+  <link rel="icon" href="/assets/img/logo_tab.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="products/workshop/20260301A/style.css">
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <div class="container">
+      <section class="hero" aria-label="イベントのメインビジュアル">
+        <img class="hero__img" src="assets/img/workshops/2026-03-01.png" alt="3Dプリンターでオリジナルフィギュアを作るワークショップのイメージ写真" />
+        <div class="hero__overlay">
+          <span class="pill"><span class="pill__dot" aria-hidden="true"></span> WORKSHOP</span>
+          <h1>3Dプリンターでオリジナルフィギュアを作ろう！</h1>
+          <p class="hero__meta">2026年3月1日（日） / 11:00–12:00</p>
+        </div>
+      </section>
+
+      <!-- 開催概要 -->
+      <section class="section" id="summary">
+        <div class="card">
+          <h2 class="section__title">開催概要</h2>
+          <p class="section__lead">
+            マイクラのようにブロックを組み立てるアプリ「Q-BU」で設計し、それを3Dプリンターで印刷できる小学校低学年向けのワークショップです。
+          </p>
+
+          <dl class="dl">
+            <div class="dl__row">
+              <dt>参加費</dt>
+              <dd>1,500円</dd>
+            </div>
+
+            <div class="dl__row">
+              <dt>開催日時</dt>
+              <dd>
+                2026年3月1日（日）<br>
+                11:00–12:00<br>
+                ※時間内はひたすら印刷したいものをつくり、12:00から印刷を開始します。印刷物回収のため、13時30分ごろに再度会場へお越しいただく必要があります。
+              </dd>
+            </div>
+
+            <div class="dl__row">
+              <dt>場所</dt>
+              <dd>
+                Luz湘南辻堂<br>
+                <span class="muted">神奈川県藤沢市辻堂神台1-2-12</span><br>
+                <div class="map" aria-label="Googleマップ">
+                    <iframe
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=Luz%E6%B9%98%E5%8D%97%E8%BE%BB%E5%A0%82%20%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%E8%97%A4%E6%B2%A2%E5%B8%82%E8%BE%BB%E5%A0%82%E7%A5%9E%E5%8F%B01-2-12&hl=ja&z=16&output=embed"
+                    title="Luz湘南辻堂 Googleマップ"
+                    allowfullscreen>
+                    </iframe>
+                </div>
+              </dd>
+            </div>
+          </dl>
+
+          <div class="actions">
+            <a class="btn" href="https://forms.office.com/r/0fKjpWSTDD" target="_blank" rel="noopener">
+              申込みフォームへ
+              <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M10 7h9v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M19 7l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 7h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+                <path d="M7 10v7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 当日の流れ（与えられた情報の範囲で） -->
+      <section class="section" id="schedule">
+        <div class="card">
+          <h2 class="section__title">当日の流れ</h2>
+          <ul class="timeline">
+            <li>
+              <span class="time">11:00</span>
+              <div>
+                <b>ワークショップ開始</b>
+                <p>当社オリジナルモデリングソフト：<a href="https://q-bu.com">Q-BU</a>を使ってオリジナルフィギュアを制作（11:00–11:45）</p>
+              </div>
+            </li>
+            <li>
+              <span class="time">11:45</span>
+              <div>
+                <b>印刷スタート！</b>
+                <p>11:45 ごろを目安にフィギュアを完成させ、3Dプリンターの簡単な説明を交えながら印刷開始！</p>
+              </div>
+            </li>
+            <li>
+              <span class="time">12:00</span>
+              <div>
+                <b>お昼休憩</b>
+              </div>
+            </li>
+            <li>
+              <span class="time">13:30</span>
+              <div>
+                <b>印刷完了！</b>
+                <p>こちらから印刷の完了をお知らせします。13時30分を目安に再度会場へお越しください。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script defer src="assets/js/main.js"></script>
+</body>
+</html>

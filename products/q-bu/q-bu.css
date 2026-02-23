@@ -1,0 +1,535 @@
+/* q-bu page scoped styles (namespaced) */
+
+.qbu-page {
+  /* main.css 側にレイアウトがある想定だが、ここでも崩れにくい最小値を用意 */
+  display: block;
+}
+
+.qbu-container {
+  width: min(1100px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.qbu-shell {
+  /* header/footer の挿入枠。何もしない */
+}
+
+/* HERO */
+.qbu-hero {
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 1.5rem;
+}
+
+.qbu-hero-grid {
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .qbu-hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+  }
+}
+
+.qbu-kicker {
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  opacity: 0.78;
+  margin: 0 0 0.65rem;
+}
+
+.qbu-title {
+  font-size: clamp(2.0rem, 4.2vw, 3.3rem);
+  line-height: 1.08;
+  margin: 0 0 0.85rem;
+}
+
+.qbu-lede {
+  font-size: clamp(1.02rem, 1.55vw, 1.2rem);
+  line-height: 1.75;
+  margin: 0 0 1.1rem;
+  opacity: 0.92;
+}
+
+.qbu-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 0 1rem;
+}
+
+.qbu-btn {
+  appearance: none;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.72rem 1.05rem;
+  border: 1px solid rgba(127,127,127,0.35);
+  background: rgba(127,127,127,0.08);
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.qbu-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(127,127,127,0.12);
+  border-color: rgba(127,127,127,0.5);
+}
+
+.qbu-btn:active {
+  transform: translateY(0);
+}
+
+.qbu-btn-primary {
+  border-color: rgba(120,170,255,0.65);
+  background: rgba(120,170,255,0.16);
+}
+
+.qbu-meta {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.qbu-meta li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid rgba(127,127,127,0.22);
+  border-radius: 14px;
+  background: rgba(127,127,127,0.06);
+}
+
+.qbu-meta span {
+  opacity: 0.72;
+  font-size: 0.92rem;
+}
+
+.qbu-note {
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid rgba(120,170,255,0.7);
+  background: rgba(120,170,255,0.08);
+  border-radius: 12px;
+}
+
+.qbu-hero-media {
+  position: relative;
+}
+
+.qbu-hero-img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(127,127,127,0.25);
+  background: rgba(127,127,127,0.05);
+}
+
+.qbu-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.qbu-badge {
+  display: inline-flex;
+  border: 1px solid rgba(127,127,127,0.28);
+  background: rgba(127,127,127,0.06);
+  padding: 0.35rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* TOC */
+.qbu-toc {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(20,20,20,0.28);
+  border-top: 1px solid rgba(127,127,127,0.18);
+  border-bottom: 1px solid rgba(127,127,127,0.18);
+}
+
+.qbu-toc-row {
+  display: flex;
+  gap: 0.9rem;
+  overflow-x: auto;
+  padding: 0.7rem 0;
+  scroll-snap-type: x mandatory;
+}
+
+.qbu-toc-row a {
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: inherit;
+  opacity: 0.82;
+  padding: 0.35rem 0.55rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.qbu-toc-row a:hover {
+  opacity: 1;
+  border-color: rgba(127,127,127,0.25);
+  background: rgba(127,127,127,0.06);
+}
+
+/* SECTIONS */
+.qbu-section {
+  padding: clamp(2.2rem, 4.5vw, 3.5rem) 0;
+}
+
+.qbu-section-alt {
+  background: rgba(127,127,127,0.04);
+  border-top: 1px solid rgba(127,127,127,0.14);
+  border-bottom: 1px solid rgba(127,127,127,0.14);
+}
+
+.qbu-h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.35rem, 2.6vw, 1.8rem);
+}
+
+.qbu-h3 {
+  margin: 0.1rem 0 0.35rem;
+  font-size: 1.05rem;
+}
+
+.qbu-p {
+  margin: 0.6rem 0 0;
+  line-height: 1.8;
+  opacity: 0.92;
+}
+
+.qbu-muted {
+  margin: 0;
+  opacity: 0.72;
+  font-size: 0.95rem;
+}
+
+.qbu-split {
+  display: grid;
+  gap: 1.2rem;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .qbu-split {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+  }
+}
+
+.qbu-figure {
+  margin: 0;
+  border: 1px solid rgba(127,127,127,0.22);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(127,127,127,0.05);
+}
+
+.qbu-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.qbu-figure figcaption {
+  padding: 0.75rem 1rem 0.95rem;
+  opacity: 0.72;
+  font-size: 0.92rem;
+}
+
+/* Cards */
+.qbu-cards {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 900px) {
+  .qbu-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.qbu-card {
+  border: 1px solid rgba(127,127,127,0.22);
+  border-radius: 16px;
+  background: rgba(127,127,127,0.05);
+  padding: 1rem 1rem 1.1rem;
+}
+
+.qbu-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.qbu-card-icon {
+  width: 38px;
+  height: 38px;
+  opacity: 0.88;
+}
+
+/* Gallery */
+.qbu-head-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.qbu-gallery {
+  margin-top: 1rem;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(240px, 1fr);
+  gap: 0.85rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+  scroll-snap-type: x mandatory;
+}
+
+.qbu-shot {
+  appearance: none;
+  border: 1px solid rgba(127,127,127,0.22);
+  border-radius: 16px;
+  background: rgba(127,127,127,0.05);
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.qbu-shot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.qbu-cap {
+  display: block;
+  padding: 0.75rem 0.95rem 0.95rem;
+  opacity: 0.78;
+  font-size: 0.92rem;
+}
+
+.qbu-lightbox {
+  border: 1px solid rgba(127,127,127,0.35);
+  border-radius: 18px;
+  padding: 0;
+  width: min(980px, calc(100% - 2rem));
+  background: rgba(10,10,10,0.92);
+  color: inherit;
+}
+
+.qbu-lightbox::backdrop {
+  background: rgba(0,0,0,0.6);
+}
+
+.qbu-lightbox-inner {
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+
+.qbu-lightbox-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(127,127,127,0.35);
+  background: rgba(127,127,127,0.12);
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+#qbu-lightbox-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px 18px 0 0;
+}
+
+.qbu-lightbox-caption {
+  margin: 0;
+  padding: 0.75rem 1rem 1rem;
+  opacity: 0.78;
+  font-size: 0.95rem;
+}
+
+/* Use cases */
+.qbu-usecases {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 900px) {
+  .qbu-usecases {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.qbu-use {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0.9rem;
+  align-items: start;
+  border: 1px solid rgba(127,127,127,0.22);
+  border-radius: 16px;
+  background: rgba(127,127,127,0.05);
+  overflow: hidden;
+}
+
+.qbu-use-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-right: 1px solid rgba(127,127,127,0.18);
+}
+
+/* Specs */
+.qbu-specs {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .qbu-specs {
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1.4rem;
+  }
+}
+
+.qbu-specs-dl {
+  margin: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.qbu-specs-dl > div {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0.9rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(127,127,127,0.22);
+  border-radius: 14px;
+  background: rgba(127,127,127,0.05);
+}
+
+.qbu-specs-dl dt {
+  opacity: 0.72;
+}
+
+.qbu-specs-dl dd {
+  margin: 0;
+}
+
+.qbu-specs-aside {
+  border: 1px solid rgba(127,127,127,0.22);
+  border-radius: 16px;
+  background: rgba(127,127,127,0.05);
+  padding: 1rem;
+}
+
+.qbu-list {
+  margin: 0.65rem 0 1rem;
+  padding-left: 1.2rem;
+  opacity: 0.92;
+  line-height: 1.75;
+}
+
+/* Links */
+.qbu-links {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 900px) {
+  .qbu-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.qbu-linkcard {
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(127,127,127,0.22);
+  border-radius: 16px;
+  background: rgba(127,127,127,0.05);
+  padding: 1rem;
+  display: grid;
+  gap: 0.35rem;
+  transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+}
+
+.qbu-linkcard:hover {
+  transform: translateY(-1px);
+  border-color: rgba(127,127,127,0.38);
+  background: rgba(127,127,127,0.08);
+}
+
+.qbu-linktitle {
+  font-weight: 600;
+}
+
+.qbu-linkdesc {
+  opacity: 0.78;
+  line-height: 1.65;
+}
+
+/* CTA */
+.qbu-cta {
+  margin-top: 1.2rem;
+  border: 1px solid rgba(120,170,255,0.35);
+  background: rgba(120,170,255,0.09);
+  border-radius: 18px;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .qbu-cta {
+    grid-template-columns: 1fr auto;
+    padding: 1.2rem 1.3rem;
+  }
+}
+
+.qbu-cta-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .qbu-btn,
+  .qbu-linkcard {
+    transition: none;
+  }
+}

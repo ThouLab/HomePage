@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>q-bu | ThouLab</title>
+  <meta name="description" content="q-bu（キューブ）の紹介ページ。コンセプト、特徴、ギャラリー、仕様、活用例をまとめています。" />
+
+  <!-- READMEにある「base自動設定」に寄せた互換実装（custom domain / GitHub Project Pages 両対応） -->
+  <meta name="site-base" content="" />
+  <script>
+    (function () {
+      const meta = document.querySelector('meta[name="site-base"]');
+      const explicit = (meta && meta.getAttribute('content') || '').trim();
+
+      // GitHub Pages の project site をざっくり推定（/repo/）
+      function guessBase() {
+        if (explicit) return explicit.endsWith('/') ? explicit : (explicit + '/');
+
+        const host = location.hostname;
+        const path = location.pathname || '/';
+
+        // thoulab.jp などの custom domain は基本 "/"
+        if (!host.endsWith('github.io')) return '/';
+
+        // username.github.io/repo/... の 1st segment を repo とみなす
+        const seg = path.split('/').filter(Boolean);
+        if (seg.length >= 1) return '/' + seg[0] + '/';
+        return '/';
+      }
+
+      const baseHref = guessBase();
+      const baseEl = document.createElement('base');
+      baseEl.href = baseHref;
+      document.head.prepend(baseEl);
+    })();
+  </script>
+
+  <!-- 既存の全体CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <!-- q-bu専用（このページだけのレイアウト/ギャラリー整形） -->
+  <link rel="stylesheet" href="products/q-bu/q-bu.css" />
+
+  <!-- OGP（必要なら差し替え） -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="q-bu | ThouLab" />
+  <meta property="og:description" content="q-bu（キューブ）の紹介ページ。コンセプト、特徴、ギャラリー、仕様、活用例。" />
+  <meta property="og:image" content="assets/img/q-bu/hero.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+</head>
+
+<body>
+    <!-- 既存サイトと同様にpartials注入できるように枠だけ用意 -->
+    <div id="site-header" class="qbu-shell"></div>
+
+    <main class="qbu-page">
+        <!-- HERO -->
+        <section class="qbu-hero" aria-labelledby="qbu-title">
+        <div class="qbu-container">
+            <div class="qbu-hero-grid">
+            <div class="qbu-hero-copy">
+            <div class="qbu-hero-media" aria-label="q-bu ビジュアル">
+                <img
+                class="qbu-hero-img"
+                src="assets/img/q-bu/hero.png"
+                width="1200"
+                height="800"
+                alt="q-bu のイメージ（プレースホルダー）"
+                loading="eager"
+                decoding="async"
+                />
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- TOC（ページ内ナビ） -->
+        <nav class="qbu-toc" aria-label="q-bu ページ内ナビゲーション">
+            <div class="qbu-container">
+            <div class="qbu-toc-row">
+                <a href="#overview">概要</a>
+                <a href="#highlights">特徴</a>
+                <a href="#gallery">ギャラリー</a>
+                <a href="#usecases">活用例</a>
+                <a href="#specs">仕様</a>
+                <a href="#resources">関連資料</a>
+            </div>
+            </div>
+        </nav>
+
+        <!-- OVERVIEW -->
+        <section id="overview" class="qbu-section">
+        <div class="qbu-container">
+            <div class="qbu-split">
+            <div>
+                <h2 class="qbu-h2">Q-BU</h2>
+                <p class="qbu-p">
+                3Dの設計から印刷までを、とにかく簡単に。
+                </p>
+                <p class="qbu-p">
+                あなたが描く、ブロックの世界を印刷してみよう！
+                </p>
+            </div>
+
+            <figure class="qbu-figure">
+                <img
+                src="assets/img/products/q-bu/diagram.svg"
+                width="1000"
+                height="700"
+                alt="q-bu の構造イメージ（プレースホルダー）"
+                loading="lazy"
+                decoding="async"
+                />
+                <figcaption>構造・拡張の考え方（図は差し替え推奨）</figcaption>
+            </figure>
+            </div>
+        </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section id="highlights" class="qbu-section qbu-section-alt">
+        <div class="qbu-container">
+            <h2 class="qbu-h2">特徴</h2>
+
+            <div class="qbu-cards">
+            <article class="qbu-card">
+                <div class="qbu-card-top">
+                <img src="assets/img/products/q-bu/icon-set.svg" alt="" class="qbu-card-icon" />
+                <h3 class="qbu-h3">小さく始められる</h3>
+                </div>
+                <p class="qbu-p">
+                机の上で完結するサイズ感。準備コストを下げ、試作の回転を上げます。
+                <!-- TODO: サイズや重量など具体値があるなら追記 -->
+                </p>
+            </article>
+
+            <article class="qbu-card">
+                <div class="qbu-card-top">
+                <img src="assets/img/products/q-bu/icon-set.svg" alt="" class="qbu-card-icon" />
+                <h3 class="qbu-h3">組み替え前提の設計</h3>
+                </div>
+                <p class="qbu-p">
+                1つの完成形を押し付けず、用途や現場に応じて組み替え・増設できる構造を目指します。
+                </p>
+            </article>
+
+            <article class="qbu-card">
+                <div class="qbu-card-top">
+                <img src="assets/img/products/q-bu/icon-set.svg" alt="" class="qbu-card-icon" />
+                <h3 class="qbu-h3">ドキュメントと共有</h3>
+                </div>
+                <p class="qbu-p">
+                使い方・設計意図・派生事例まで含めて共有できるよう、資料と運用の整備を進めています。
+                </p>
+            </article>
+            </div>
+        </div>
+        </section>
+
+        <!-- GALLERY -->
+        <section id="gallery" class="qbu-section">
+        <div class="qbu-container">
+            <div class="qbu-head-row">
+            <h2 class="qbu-h2">ギャラリー</h2>
+            <p class="qbu-muted">画像をクリックすると拡大表示できます（簡易ライトボックス）。</p>
+            </div>
+
+            <div class="qbu-gallery" data-qbu-gallery>
+            <button class="qbu-shot" type="button" data-full="assets/img/products/q-bu/gallery-01.svg">
+                <img src="assets/img/products/q-bu/gallery-01.svg" alt="q-bu ギャラリー画像 1（プレースホルダー）" loading="lazy" decoding="async" />
+                <span class="qbu-cap">Prototype view</span>
+            </button>
+
+            <button class="qbu-shot" type="button" data-full="assets/img/products/q-bu/gallery-02.svg">
+                <img src="assets/img/products/q-bu/gallery-02.svg" alt="q-bu ギャラリー画像 2（プレースホルダー）" loading="lazy" decoding="async" />
+                <span class="qbu-cap">Detail / texture</span>
+            </button>
+
+            <button class="qbu-shot" type="button" data-full="assets/img/products/q-bu/gallery-03.svg">
+                <img src="assets/img/products/q-bu/gallery-03.svg" alt="q-bu ギャラリー画像 3（プレースホルダー）" loading="lazy" decoding="async" />
+                <span class="qbu-cap">In context</span>
+            </button>
+
+            <button class="qbu-shot" type="button" data-full="assets/img/products/q-bu/gallery-04.svg">
+                <img src="assets/img/products/q-bu/gallery-04.svg" alt="q-bu ギャラリー画像 4（プレースホルダー）" loading="lazy" decoding="async" />
+                <span class="qbu-cap">Modular idea</span>
+            </button>
+            </div>
+
+            <dialog class="qbu-lightbox" id="qbu-lightbox" aria-label="画像拡大表示">
+            <form method="dialog" class="qbu-lightbox-inner">
+                <button class="qbu-lightbox-close" value="close" aria-label="閉じる">×</button>
+                <img id="qbu-lightbox-img" alt="" />
+                <p id="qbu-lightbox-caption" class="qbu-lightbox-caption"></p>
+            </form>
+            </dialog>
+        </div>
+        </section>
+
+        <!-- USE CASES -->
+        <section id="usecases" class="qbu-section qbu-section-alt">
+        <div class="qbu-container">
+            <h2 class="qbu-h2">活用例</h2>
+
+            <div class="qbu-usecases">
+            <article class="qbu-use">
+                <img src="assets/img/products/q-bu/gallery-03.svg" alt="" class="qbu-use-img" loading="lazy" decoding="async" />
+                <div>
+                <h3 class="qbu-h3">ワークショップ</h3>
+                <p class="qbu-p">
+                    その場で触って組んで議論できる“共通の物体”として機能します。
+                </p>
+                </div>
+            </article>
+
+            <article class="qbu-use">
+                <img src="assets/img/products/q-bu/gallery-04.svg" alt="" class="qbu-use-img" loading="lazy" decoding="async" />
+                <div>
+                <h3 class="qbu-h3">研究の試作</h3>
+                <p class="qbu-p">
+                    観察→仮説→試作→検証のループを軽くし、検証密度を上げます。
+                </p>
+                </div>
+            </article>
+
+            <article class="qbu-use">
+                <img src="assets/img/products/q-bu/gallery-01.svg" alt="" class="qbu-use-img" loading="lazy" decoding="async" />
+                <div>
+                <h3 class="qbu-h3">教育・授業</h3>
+                <p class="qbu-p">
+                    “概念だけ”になりがちなテーマを、触れる形で理解へつなげます。
+                </p>
+                </div>
+            </article>
+
+            <article class="qbu-use">
+                <img src="assets/img/products/q-bu/gallery-02.svg" alt="" class="qbu-use-img" loading="lazy" decoding="async" />
+                <div>
+                <h3 class="qbu-h3">展示・デモ</h3>
+                <p class="qbu-p">
+                    実物と説明資料の距離を縮め、体験として伝える導線を作れます。
+                </p>
+                </div>
+            </article>
+            </div>
+        </div>
+        </section>
+
+        <!-- SPECS -->
+        <section id="specs" class="qbu-section">
+        <div class="qbu-container">
+            <h2 class="qbu-h2">仕様</h2>
+            <p class="qbu-muted">※以下はテンプレートです。分かる範囲から埋めていく運用を想定しています。</p>
+
+            <div class="qbu-specs">
+            <dl class="qbu-specs-dl">
+                <div><dt>外形</dt><dd><!-- TODO --> 60 × 60 × 60 mm（例）</dd></div>
+                <div><dt>重量</dt><dd><!-- TODO --> 120 g（例）</dd></div>
+                <div><dt>電源</dt><dd><!-- TODO --> USB-C / 5V（例）</dd></div>
+                <div><dt>I/O</dt><dd><!-- TODO --> GPIO / I2C / UART（例）</dd></div>
+                <div><dt>素材</dt><dd><!-- TODO --> 3Dプリント / CNC / 既製部品（例）</dd></div>
+                <div><dt>想定利用</dt><dd><!-- TODO --> 研究・教育・ワークショップ</dd></div>
+            </dl>
+
+            <div class="qbu-specs-aside">
+                <h3 class="qbu-h3">同梱物（例）</h3>
+                <ul class="qbu-list">
+                <li><!-- TODO --> 本体 × 1</li>
+                <li><!-- TODO --> 取付パーツ × 1式</li>
+                <li><!-- TODO --> ケーブル × 1</li>
+                <li><!-- TODO --> クイックスタート（PDF/URL）</li>
+                </ul>
+
+                <h3 class="qbu-h3">注意事項</h3>
+                <ul class="qbu-list">
+                <li>試作機の場合、仕様は予告なく変更されます。</li>
+                <li>安全・電源・発熱などは必ず実機に合わせて記載してください。</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- RESOURCES -->
+        <section id="resources" class="qbu-section qbu-section-alt">
+        <div class="qbu-container">
+            <h2 class="qbu-h2">関連資料</h2>
+            <div class="qbu-links">
+            <!-- TODO: 実URLへ -->
+            <a class="qbu-linkcard" href="#" aria-disabled="true">
+                <span class="qbu-linktitle">Quick Start</span>
+                <span class="qbu-linkdesc">最短で動かすためのガイド（PDF/ページ）</span>
+            </a>
+            <a class="qbu-linkcard" href="#" aria-disabled="true">
+                <span class="qbu-linktitle">Design Files</span>
+                <span class="qbu-linkdesc">CAD / 部品表 / 図面（公開する場合）</span>
+            </a>
+            <a class="qbu-linkcard" href="#" aria-disabled="true">
+                <span class="qbu-linktitle">Repo / Notes</span>
+                <span class="qbu-linkdesc">実装・運用メモ・派生例</span>
+            </a>
+            </div>
+
+            <div class="qbu-cta">
+            <div>
+                <h3 class="qbu-h3">q-bu を一緒に育てる</h3>
+                <p class="qbu-p">
+                導入相談、共同制作、ワークショップ実施など、お気軽にご連絡ください。
+                </p>
+            </div>
+            <div class="qbu-cta-actions">
+                <a class="qbu-btn qbu-btn-primary" href="contact/">お問い合わせ</a>
+                <a class="qbu-btn" href="products/">プロダクト一覧へ</a>
+            </div>
+            </div>
+        </div>
+        </section>
+    </main>
+
+  <div id="site-footer" class="qbu-shell"></div>
+
+  <!-- 既存JS -->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- q-bu用（ギャラリーライトボックス + partialフォールバック） -->
+  <script src="products/q-bu/q-bu.js" defer></script>
+
+  <!-- partials挿入のフォールバック（main.js側が既にやっている場合は二重に読みません） -->
+  <script>
+    (function () {
+      async function includeIfEmpty(id, url) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (el.dataset.included === "1") return;
+        if (el.children && el.children.length > 0) {
+          el.dataset.included = "1";
+          return;
+        }
+        try {
+          const res = await fetch(url, { cache: "no-store" });
+          if (!res.ok) return;
+          const html = await res.text();
+          if (!el.children || el.children.length === 0) el.innerHTML = html;
+          el.dataset.included = "1";
+        } catch (e) {
+          // silent
+        }
+      }
+      window.addEventListener("DOMContentLoaded", function () {
+        includeIfEmpty("site-header", "partials/header.html");
+        includeIfEmpty("site-footer", "partials/footer.html");
+      });
+    })();
+  </script>
+</body>
+</html>
