@@ -88,18 +88,16 @@ img{ max-width: 100%; height: auto; }
     box-shadow: var(--shadow);
     border: 1px solid var(--border);
     background: var(--surface);
-    height: min(20vw, 200px);
-    min-height: 270px;  
 }
+
 .hero__img{
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
     filter: saturate(1.02) contrast(1.02);
 }
+
 .hero__overlay{
     position: absolute;
     inset: 0;
@@ -108,13 +106,11 @@ img{ max-width: 100%; height: auto; }
     flex-direction: column;
     justify-content: flex-end;
     gap: 10px;
-    background:
-    linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,.58));
+    background: linear-gradient(to bottom, rgba(0,0,0,.08), rgba(0,0,0,.58));
 }
 @media (prefers-color-scheme: dark) {
     .hero__overlay{
-    background:
-        linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.68));
+        background: linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,.68));
     }
 }
 
@@ -326,108 +322,3 @@ footer{
 
 
 
-.schedule-tabs {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-  margin-bottom: 14px;
-}
-
-.schedule-tab {
-  appearance: none;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  border-radius: 999px;
-  padding: 10px 14px;
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
-  transition: background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
-}
-
-.schedule-tab:hover {
-  transform: translateY(-1px);
-}
-
-.schedule-tab.is-active {
-  background: #515a9f;
-  color: #fff;
-  border-color: #515a9f;
-}
-
-.schedule-panels {
-  position: relative;
-}
-
-.session-panel {
-  display: none;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: calc(var(--radius) - 2px);
-  box-shadow: var(--shadow);
-  padding: 16px 14px 14px;
-  position: relative;
-  overflow: hidden;
-}
-
-.session-panel.is-active {
-  display: block;
-}
-
-.session-panel::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 4px;
-  background: linear-gradient(90deg, #515a9f 0%, #cc9b11 100%);
-  opacity: 0.95;
-}
-
-.session-panel h3 {
-  margin: 0 0 14px;
-  padding-top: 4px;
-  font-size: 16px;
-  line-height: 1.35;
-  font-weight: 800;
-  color: var(--text);
-}
-
-.item {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 6px;
-  padding: 10px 0;
-  border-top: 1px solid var(--border);
-}
-
-.item:first-of-type {
-  border-top: 0;
-  padding-top: 0;
-}
-
-.schedule-time {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  min-height: 28px;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: color-mix(in srgb, #515a9f 10%, var(--surface) 90%);
-  border: 1px solid color-mix(in srgb, #515a9f 18%, var(--border) 82%);
-  color: #515a9f;
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: .04em;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-
-.schedule-label {
-  display: block;
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.55;
-}
