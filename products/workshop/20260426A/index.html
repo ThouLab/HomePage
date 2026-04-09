@@ -62,8 +62,14 @@
         </div>
       </section>
       <div class="actions">
-        <a class="btn" href="https://forms.office.com/r/0fKjpWSTDD" target="_blank" rel="noopener">
+        <a class="btn"
+          href="https://forms.office.com/r/0fKjpWSTDD"
+          target="_blank"
+          rel="noopener"
+          onclick="trackApplyClick()">
+
           お申込みはこちら！
+
           <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M10 7h9v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             <path d="M19 7l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -71,6 +77,17 @@
             <path d="M7 10v7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
           </svg>
         </a>
+        <script>
+        function trackApplyClick() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'apply_click', {
+              button_name: 'お申込みはこちら！(上)',
+              destination: 'forms.office.com',
+              page_location: window.location.href
+            });
+          }
+        }
+        </script>
       </div>
 
       <!-- 開催概要 -->
@@ -80,13 +97,7 @@
           <p class="section__lead">
             3Dモデリングってなんだろう？
             モデリングとは何かを学びながら、ブロックを積み重ねてモデリング体験！
-            自分だけのフィギュアを作ってみよう！<br>
-            <a href="assets/pdf/20260426_flyer.pdf"
-              class="link-download"
-              target="_blank"
-              rel="noopener">
-              チラシのダウンロードはこちら！
-            </a>
+            自分だけのフィギュアを作ってみよう！
           </p>
           <br>
           <dl class="dl">
@@ -94,6 +105,12 @@
                 <dt>完成イメージ</dt>
                 <dd>
                   <img src="assets/img/workshops/2026-04-26-2.jpg"/>
+                </dd>
+            </div>
+            <div class="dl__row">
+                <dt>体験内容</dt>
+                <dd>
+                  <img src="assets/img/workshops/2026-04-26-3.jpg"/>
                 </dd>
             </div>
             <div class="dl__row">
@@ -134,6 +151,24 @@
                 <div class="map" aria-label="Googleマップ">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3254.711078494556!2d139.4864839126475!3d35.33799547258636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60184f2273429cdd%3A0x7b590b835d9f19d6!2zR1PosrjkvJrorbDlrqTol6TmsqLljZflj6Plupfjg7vjg5bjg6vjg7w!5e0!3m2!1sja!2sjp!4v1775527516862!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
+              </dd>
+            </div>
+
+            <div class="dl__row">
+              <dt>チラシ</dt>
+              <dd>
+                <button class="btn-download" onclick="downloadPDF()">
+                  <span class="muted">📜チラシをダウンロード（PDF）</span>
+                </button>
+                <script>
+                  function downloadPDF() {
+                    gtag('event', 'flyer_download_click', {
+                      button_name: 'チラシをダウンロード（PDF）',
+                      file_name: '20260426_flyer.pdf'
+                    });
+                    window.open("assets/pdf/20260426_flyer.pdf", "_blank");
+                  }
+                </script>
               </dd>
             </div>
           </dl>
@@ -305,8 +340,14 @@
             </li>
           </ul>
           <div class="actions">
-            <a class="btn" href="https://forms.office.com/r/0fKjpWSTDD" target="_blank" rel="noopener">
+            <a class="btn"
+              href="https://forms.office.com/r/0fKjpWSTDD"
+              target="_blank"
+              rel="noopener"
+              onclick="trackApplyClick()">
+
               お申込みはこちら！
+
               <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M10 7h9v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                 <path d="M19 7l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -314,6 +355,17 @@
                 <path d="M7 10v7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
               </svg>
             </a>
+            <script>
+            function trackApplyClick() {
+              if (typeof gtag === 'function') {
+                gtag('event', 'apply_click', {
+                  button_name: 'お申込みはこちら！(下)',
+                  destination: 'forms.office.com',
+                  page_location: window.location.href
+                });
+              }
+            }
+            </script>
           </div>
         </div>
       </section>
