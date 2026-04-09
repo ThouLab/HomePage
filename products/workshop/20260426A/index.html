@@ -89,6 +89,9 @@
         }
         </script>
       </div>
+      <p>
+        ※申し込み受付フォーム（Microsoft Forms）に遷移します
+      </p>
 
       <!-- 開催概要 -->
       <section class="section" id="summary">
@@ -174,6 +177,38 @@
           </dl>
         </div>
       </section>
+
+      <div class="actions">
+        <a class="btn"
+          href="https://forms.office.com/r/0fKjpWSTDD"
+          target="_blank"
+          rel="noopener"
+          onclick="trackApplyClick()">
+
+          お申込みはこちら！
+
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M10 7h9v9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M19 7l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M7 7h3" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+            <path d="M7 10v7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
+          </svg>
+        </a>
+        <script>
+        function trackApplyClick() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'apply_click', {
+              button_name: 'お申込みはこちら！(中)',
+              destination: 'forms.office.com',
+              page_location: window.location.href
+            });
+          }
+        }
+        </script>
+      </div>
+      <p>
+        ※申し込み受付フォーム（Microsoft Forms）に遷移します
+      </p>
 
       
       <section class="section" id="schedule">
@@ -339,7 +374,10 @@
               </div>
             </li>
           </ul>
-          <div class="actions">
+        </div>
+      </section>
+
+      <div class="actions">
             <a class="btn"
               href="https://forms.office.com/r/0fKjpWSTDD"
               target="_blank"
@@ -367,8 +405,9 @@
             }
             </script>
           </div>
-        </div>
-      </section>
+          <p>
+            ※申し込み受付フォーム（Microsoft Forms）に遷移します
+          </p>
 
       <!-- <section class="section" id="schedule">
         <div class="card">
