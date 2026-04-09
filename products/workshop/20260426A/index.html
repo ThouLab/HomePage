@@ -66,7 +66,7 @@
           href="https://forms.office.com/r/0fKjpWSTDD"
           target="_blank"
           rel="noopener"
-          onclick="trackApplyClick()">
+          onclick="gtag('event','apply_click',{button_name:'上'});">
 
           お申込みはこちら！
 
@@ -77,17 +77,6 @@
             <path d="M7 10v7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
           </svg>
         </a>
-        <script>
-        function trackApplyClick() {
-          if (typeof gtag === 'function') {
-            gtag('event', 'apply_click', {
-              button_name: 'お申込みはこちら！(上)',
-              destination: 'forms.office.com',
-              page_location: window.location.href
-            });
-          }
-        }
-        </script>
       </div>
       <p>
         ※申し込み受付フォーム（Microsoft Forms）に遷移します
@@ -183,7 +172,7 @@
           href="https://forms.office.com/r/0fKjpWSTDD"
           target="_blank"
           rel="noopener"
-          onclick="trackApplyClick()">
+          onclick="gtag('event','apply_click',{button_name:'中'});">
 
           お申込みはこちら！
 
@@ -194,17 +183,6 @@
             <path d="M7 10v7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
           </svg>
         </a>
-        <script>
-        function trackApplyClick() {
-          if (typeof gtag === 'function') {
-            gtag('event', 'apply_click', {
-              button_name: 'お申込みはこちら！(中)',
-              destination: 'forms.office.com',
-              page_location: window.location.href
-            });
-          }
-        }
-        </script>
       </div>
       <p>
         ※申し込み受付フォーム（Microsoft Forms）に遷移します
@@ -382,7 +360,7 @@
               href="https://forms.office.com/r/0fKjpWSTDD"
               target="_blank"
               rel="noopener"
-              onclick="trackApplyClick()">
+              onclick="gtag('event','apply_click',{button_name:'下'});">
 
               お申込みはこちら！
 
@@ -393,17 +371,6 @@
                 <path d="M7 10v7h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity=".6"/>
               </svg>
             </a>
-            <script>
-            function trackApplyClick() {
-              if (typeof gtag === 'function') {
-                gtag('event', 'apply_click', {
-                  button_name: 'お申込みはこちら！(下)',
-                  destination: 'forms.office.com',
-                  page_location: window.location.href
-                });
-              }
-            }
-            </script>
           </div>
           <p>
             ※申し込み受付フォーム（Microsoft Forms）に遷移します
