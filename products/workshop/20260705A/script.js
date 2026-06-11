@@ -16,10 +16,35 @@
     anchor.addEventListener("click", (event) => {
       const targetId = anchor.getAttribute("href");
       if (!targetId || targetId === "#") return;
+
       const target = document.querySelector(targetId);
       if (!target) return;
+
       event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
     });
   });
+
+  // 動画制御
+  const heroVideo = document.querySelector(".hero-video");
+
+  if (heroVideo) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          heroVideo.play().catch(() => {});
+        } else {
+          heroVideo.pause();
+        }
+      },
+      {
+        threshold: 0.4
+      }
+    );
+
+    observer.observe(heroVideo);
+  }
 })();
