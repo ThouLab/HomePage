@@ -394,7 +394,7 @@ a {
 
 .portrait-wrap {
   overflow: hidden;
-  width: 90vw
+  width: 100%;
   aspect-ratio: 9 / 20;
   margin: 0 auto;
   border-radius: 24px;
