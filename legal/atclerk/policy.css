@@ -1,0 +1,30 @@
+:root {
+  color-scheme: light;
+  color: #202c27;
+  background: #f4f7f4;
+  font-family: system-ui, "Hiragino Sans", "Yu Gothic", sans-serif;
+  line-height: 1.8;
+}
+
+body { margin: 0; overflow-wrap: anywhere; }
+a { color: #205c46; text-underline-offset: .2em; }
+a:focus-visible { outline: 2px solid #205c46; outline-offset: 3px; }
+.policy-header, .policy-shell, .policy-footer { box-sizing: border-box; width: min(100% - 2rem, 48rem); margin-inline: auto; }
+.policy-header { padding-block: 1.1rem .7rem; }
+.policy-header a { font-weight: 700; }
+.policy-shell { padding: clamp(1.1rem, 4vw, 2.5rem); background: #fff; border: 1px solid #dae4dc; border-radius: 1rem; }
+.policy-kicker { color: #45645a; font-size: .9rem; font-weight: 600; }
+h1 { margin: 0 0 1rem; font-size: clamp(1.45rem, 5vw, 2.2rem); line-height: 1.45; }
+h2 { margin: 1.7rem 0 .4rem; font-size: 1.18rem; }
+p, ul { margin-block: .5rem 1rem; }
+.policy-nav { display: flex; flex-wrap: wrap; column-gap: 1.1rem; row-gap: .25rem; margin-block: 1.4rem .8rem; }
+.policy-nav a[aria-current="page"] { font-weight: 700; }
+.policy-footer { padding-block: 1rem 2rem; font-size: .88rem; }
+.policy-preview { padding: .6rem .85rem; border-radius: .4rem; background: #fff2d6; color: #694411; }
+.policy-details { margin-block: 1.25rem; }
+.policy-details > div { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: .85rem; padding-block: .85rem; border-top: 1px solid #dae4dc; }
+.policy-details dt { font-weight: 700; }
+.policy-details dd { margin: 0; }
+@media (max-width: 36rem) {
+  .policy-details > div { grid-template-columns: minmax(0, 1fr); gap: .2rem; }
+}
