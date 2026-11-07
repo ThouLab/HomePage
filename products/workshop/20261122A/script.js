@@ -1,11 +1,4 @@
 (() => {
-  const formUrl = document.body.dataset.formUrl;
-  if (formUrl) {
-    document.querySelectorAll("[data-apply-link]").forEach((link) => {
-      link.href = formUrl;
-    });
-  }
-
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
