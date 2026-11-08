@@ -38,6 +38,9 @@
       if (target.origin !== bookingOrigin || target.pathname !== bookingPath) continue;
       for (const key of attributionKeys) target.searchParams.delete(key);
       for (const [key, value] of attribution) target.searchParams.set(key, value);
+      // The link is on this LP even if the incoming advertisement URL said direct.
+      target.searchParams.delete("atc_via");
+      target.searchParams.set("atc_via", "lp");
       link.setAttribute("href", target.href);
     } catch {
       // Keep the static, LP-tagged link if it cannot be parsed.

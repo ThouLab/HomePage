@@ -28,7 +28,11 @@ function render(search, definitions = [{ href: booking }]) {
   });
   return links;
 }
-function parameters(link) { return Object.fromEntries(new URL(link.getAttribute("href")).searchParams); }
+function parameters(link) {
+  const values = new URL(link.getAttribute("href")).searchParams;
+  assert.deepEqual(values.getAll("atc_via"), ["lp"]);
+  return Object.fromEntries([...values].filter(([key]) => key !== "atc_via"));
+}
 
 test("all five static booking links work with LP attribution before JavaScript runs", () => {
   const anchors = [...html.matchAll(/<a\b[^>]*\bdata-apply-link\b[^>]*>/g)];
@@ -37,7 +41,7 @@ test("all five static booking links work with LP attribution before JavaScript r
     const href = tag.match(/\bhref="([^"]+)"/)?.[1].replaceAll("&amp;", "&");
     const url = new URL(href);
     assert.equal(url.origin + url.pathname, booking);
-    assert.deepEqual(Object.fromEntries(url.searchParams), { utm_source: "thoulab_lp", utm_medium: "referral" });
+    assert.deepEqual(Object.fromEntries(url.searchParams), { utm_source: "thoulab_lp", utm_medium: "referral", atc_via: "lp" });
   }
 });
 
@@ -155,6 +159,24 @@ test("decoded trailing CR and LF cannot enter source, medium or optional labels"
       utm_source: "meta", utm_medium: "paid",
     });
   }
+});
+
+test("the actual LP always marks its booking links as LP even when an advertisement or stale link says direct", () => {
+  for (const marker of ["direct", "lp", "unknown", "DIRECT", "", "direct&atc_via=lp"]) {
+    const [link] = render("?utm_source=meta&utm_medium=paid_social&utm_campaign=same&utm_content=same&atc_via=" + marker, [{
+      href: booking + "?atc_via=direct&atc_via=unknown", target: "_blank", rel: "noopener",
+    }]);
+    assert.deepEqual(parameters(link), { utm_source: "meta", utm_medium: "paid_social", utm_campaign: "same", utm_content: "same" });
+    assert.equal(new URL(link.getAttribute("href")).searchParams.get("atc_via"), "lp");
+    assert.equal(link.values.get("target"), "_blank");
+  }
+});
+
+test("invalid UTM pairs retain the LP entry marker while keeping invalid tokens and click IDs out", () => {
+  const [link] = render("?utm_source=meta&utm_medium=bad%20medium&atc_via=direct&fbclid=PRIVATE_CLICK");
+  assert.deepEqual(Object.fromEntries(new URL(link.getAttribute("href")).searchParams), { utm_source: "", utm_medium: "", atc_via: "lp" });
+  assert.doesNotMatch(link.getAttribute("href"), /PRIVATE_CLICK|bad|direct/);
+  assert.match(html, /script\.js\?v=entry-route-20261108/);
 });
 
 
