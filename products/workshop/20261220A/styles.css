@@ -53,6 +53,7 @@ a:focus-visible, summary:focus-visible { outline: 3px solid #28765e; outline-off
 .btn-primary { color: #fff; background: linear-gradient(135deg, #bf5518, #9f3e0b); box-shadow: 0 10px 24px rgba(167, 71, 18, .22); transition: transform .18s ease, box-shadow .18s ease; }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 13px 28px rgba(167, 71, 18, .28); }
 .btn-secondary { color: var(--primary-dark); background: #fff; border: 1px solid var(--line); }
+.entry-contact { margin-top: 12px; }
 .text-link { display: block; width: fit-content; margin: 15px auto 0; padding: 5px; color: var(--primary-dark); font-size: .875rem; font-weight: 700; text-underline-offset: 4px; }
 .section { padding: 44px 18px 0; }
 .section-head { margin-bottom: 18px; }
