@@ -57,3 +57,27 @@ a:focus-visible { outline: 3px solid #28765e; outline-offset: 4px; }
 .footer-note { margin: 8px 0 0; color: var(--muted); font-size: .75rem; }
 .btn-event { flex-direction: column; gap: 2px; padding: 12px 18px; border-radius: 28px; line-height: 1.45; word-break: keep-all; overflow-wrap: normal; }
 .btn-sub { font-size: .75rem; font-weight: 700; opacity: .9; }
+/* 写真の拡大表示 */
+.photo-grid a { cursor: zoom-in; }
+.lightbox { width: 100vw; max-width: 100vw; height: 100vh; height: 100dvh; max-height: none; margin: 0; padding: 56px 12px calc(24px + var(--safe-bottom)); border: 0; background: transparent; }
+.lightbox[open] { display: flex; align-items: center; justify-content: center; }
+.lightbox::backdrop { background: rgba(20, 14, 10, .92); }
+.lightbox img { max-width: min(100%, 1200px); max-height: 100%; width: auto; height: auto; border-radius: 12px; object-fit: contain; }
+.lightbox-close { position: fixed; top: calc(10px + env(safe-area-inset-top, 0px)); right: 12px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 999px; background: rgba(255, 255, 255, .92); color: var(--ink); font-size: 28px; line-height: 1; cursor: pointer; }
+.lightbox-close:focus-visible { outline: 3px solid #28765e; outline-offset: 3px; }
+.lightbox-open { overflow: hidden; }
+/* ヘッダー：12/20 スノードーム工作への導線 */
+.header-event { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; min-height: 44px; margin-right: auto; padding: 5px 14px; border-radius: 999px; background: linear-gradient(135deg, #bf5518, #9f3e0b); color: #fff; font-size: .8125rem; font-weight: 800; line-height: 1.3; text-align: center; text-decoration: none; white-space: nowrap; box-shadow: 0 6px 14px rgba(167, 71, 18, .2); }
+.header-event span { font-size: .6875rem; font-weight: 700; opacity: .9; }
+.header-link { white-space: nowrap; }
+@media (max-width: 400px) {
+  .site-header { gap: 8px; padding-right: 12px; padding-left: 12px; }
+  .brand img { width: 100px; }
+  .header-event { padding: 5px 11px; font-size: .75rem; }
+  .header-link { font-size: .75rem; }
+}
+@media (max-width: 340px) {
+  .brand img { width: 80px; }
+  .header-event { padding: 5px 9px; }
+}
+.event-note { margin: 6px 0 0; color: var(--muted); font-size: .8125rem; line-height: 1.7; }
