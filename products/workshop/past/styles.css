@@ -1,0 +1,59 @@
+/* 過去の活動の様子（products/workshop/past/ 配下の共通スタイル）
+   12/20 LP（20261220A/styles.css）と同じトーンに合わせています。 */
+:root {
+  color-scheme: light;
+  --bg: #fff7ee;
+  --ink: #2f241d;
+  --muted: #75675e;
+  --line: #f0dfcf;
+  --primary-dark: #ad4812;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", Meiryo, sans-serif;
+  background: radial-gradient(circle at top left, rgba(255, 185, 118, .4), transparent 30rem), linear-gradient(135deg, #fff4e8, #fff 48%, #ffe9d8);
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+a { color: inherit; }
+img { display: block; max-width: 100%; height: auto; }
+a:focus-visible { outline: 3px solid #28765e; outline-offset: 4px; }
+.skip-link { position: fixed; left: 12px; top: 12px; z-index: 99; transform: translateY(-200%); padding: 10px 14px; border-radius: 999px; background: var(--ink); color: #fff; }
+.skip-link:focus { transform: translateY(0); }
+.page-shell { width: min(100%, 480px); min-height: 100vh; margin: 0 auto; background: var(--bg); box-shadow: 0 0 0 1px rgba(112, 76, 46, .06), 0 28px 90px rgba(82, 49, 25, .18); }
+.site-header { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: calc(10px + env(safe-area-inset-top, 0px)) 16px 10px; background: rgba(255, 247, 238, .95); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+.brand img { width: 132px; }
+.header-link { padding: 8px 4px; color: var(--primary-dark); font-size: .875rem; font-weight: 700; text-underline-offset: 4px; }
+.hero { padding: 28px 18px 0; }
+.eyebrow { margin: 0 0 10px; color: var(--primary-dark); font-size: .875rem; font-weight: 800; letter-spacing: .06em; }
+.hero h1 { margin: 0; font-size: clamp(24px, 6.6vw, 30px); line-height: 1.45; letter-spacing: -.03em; }
+.event-date { display: block; margin-bottom: 6px; color: var(--primary-dark); font-size: .62em; letter-spacing: 0; }
+.event-meta, .lead { margin: 12px 0 0; color: #625249; }
+.event-summary { margin: 16px 0 0; padding: 14px 16px; border-radius: 16px; background: #fff; color: var(--ink); line-height: 1.9; }
+.event-summary:empty { display: none; }
+.section { padding: 32px 18px 0; }
+.photo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.photo-grid a { display: block; overflow: hidden; border-radius: 16px; background: #fcf8ee; aspect-ratio: 16 / 9; }
+.photo-grid img { width: 100%; height: 100%; object-fit: cover; }
+.photo-grid li:first-child { grid-column: 1 / -1; }
+.photo-grid li:last-child:nth-child(even) { grid-column: 1 / -1; }
+.photo-grid:has(li) + .photo-empty { display: none; }
+.photo-empty { margin: 0; padding: 40px 16px; border: 1px dashed var(--line); border-radius: 20px; color: var(--muted); text-align: center; }
+.date-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.date-list a { display: block; padding: 16px 44px 16px 18px; border: 1px solid var(--line); border-radius: 18px; background: #fff; text-decoration: none; position: relative; }
+.date-list a::after { content: "›"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--primary-dark); font-size: 1.5rem; }
+.date-list .date { display: block; color: var(--primary-dark); font-weight: 800; }
+.date-list .name { display: block; margin-top: 2px; color: #625249; font-size: .875rem; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 15px 18px; border-radius: 999px; font-weight: 800; text-align: center; text-decoration: none; }
+.wide { width: 100%; }
+.btn-primary { color: #fff; background: linear-gradient(135deg, #bf5518, #9f3e0b); box-shadow: 0 10px 24px rgba(167, 71, 18, .22); }
+.btn-secondary { color: var(--primary-dark); background: #fff; border: 1px solid var(--line); }
+.text-link { display: block; width: fit-content; margin: 18px auto 0; padding: 5px; color: var(--primary-dark); font-size: .875rem; font-weight: 700; text-underline-offset: 4px; }
+.site-footer { display: grid; gap: 12px; padding: 44px 18px calc(32px + var(--safe-bottom)); }
+.footer-link { font-size: .875rem; text-underline-offset: 4px; }
+.footer-note { margin: 8px 0 0; color: var(--muted); font-size: .75rem; }
+.btn-event { flex-direction: column; gap: 2px; padding: 12px 18px; border-radius: 28px; line-height: 1.45; word-break: keep-all; overflow-wrap: normal; }
+.btn-sub { font-size: .75rem; font-weight: 700; opacity: .9; }
