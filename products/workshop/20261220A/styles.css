@@ -131,3 +131,21 @@ address { font-size: 1rem; font-style: normal; }
 .learning-toggle[open] .learning-hint { display: none; }
 .learning-intro { margin: 16px 0; color: #625249; line-height: 1.9; }
 @media (prefers-reduced-motion: reduce) { .learning-toggle > summary::after { transition: none; } }
+/* 参加費に含まれるもの */
+.price-card { padding: 22px 20px 20px; border: 2px solid var(--primary-dark); border-radius: 24px; background: #fff; box-shadow: var(--shadow); }
+.price-main { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 0; }
+.price-figure { display: inline-flex; align-items: baseline; white-space: nowrap; }
+.price-label { color: var(--muted); font-size: .9375rem; font-weight: 700; }
+.price-main strong { color: var(--primary-dark); font-size: 44px; line-height: 1.1; letter-spacing: -.02em; }
+.price-main small { margin-left: 2px; font-size: 20px; }
+.price-per { margin: 6px 0 0; color: #625249; font-size: .9375rem; text-align: center; }
+.price-per b { color: var(--ink); }
+.price-includes { display: grid; gap: 8px; margin: 18px 0 0; padding: 16px 0 0; border-top: 1px dashed var(--line); list-style: none; }
+.price-includes li { position: relative; padding-left: 30px; font-size: .9375rem; line-height: 1.7; }
+.price-includes li::before { content: ""; position: absolute; left: 4px; top: .35em; width: 16px; height: 9px; border-left: 3px solid var(--accent); border-bottom: 3px solid var(--accent); transform: rotate(-45deg); }
+.price-note { margin: 14px 0 0; padding: 10px 14px; border-radius: 14px; background: #fff4e8; color: var(--ink); font-size: .875rem; font-weight: 700; line-height: 1.7; }
+.price-values { display: grid; gap: 10px; margin: 14px 0 0; padding: 0; list-style: none; }
+.price-values li { padding: 16px 18px; border: 1px solid var(--line); border-radius: 20px; background: #fffaf4; }
+.price-values h3 { margin: 0; font-size: 1rem; line-height: 1.6; }
+.price-values p { margin: 4px 0 0; color: #625249; font-size: .9375rem; line-height: 1.85; }
+.price-tax { margin-left: 4px; color: var(--muted); font-size: .875rem; font-weight: 700; }
