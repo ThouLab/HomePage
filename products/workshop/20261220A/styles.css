@@ -149,3 +149,6 @@ address { font-size: 1rem; font-style: normal; }
 .price-values h3 { margin: 0; font-size: 1rem; line-height: 1.6; }
 .price-values p { margin: 4px 0 0; color: #625249; font-size: .9375rem; line-height: 1.85; }
 .price-tax { margin-left: 4px; color: var(--muted); font-size: .875rem; font-weight: 700; }
+/* ヒーロー：開催のポイント */
+ul.trust-row { margin: 16px 0 0; padding: 0; list-style: none; }
+.trust-row li { padding: 5px 11px; border: 1px solid var(--line); border-radius: 999px; background: #fffaf4; color: #5f4d41; font-size: .875rem; font-weight: 700; line-height: 1.5; white-space: nowrap; }
