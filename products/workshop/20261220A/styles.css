@@ -116,3 +116,18 @@ address { font-size: 1rem; font-style: normal; }
 .past-dates .name { display: block; color: #625249; font-size: .875rem; }
 .header-cta { white-space: nowrap; }
 @media (prefers-reduced-motion: reduce) { .past-picker > summary::after { transition: none; } }
+/* スノードーム作りで学べること */
+.learning-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; counter-reset: learning; }
+.learning-list li { position: relative; padding: 18px 18px 18px 64px; border: 1px solid var(--line); border-radius: 20px; background: #fff; counter-increment: learning; }
+.learning-list li::before { content: counter(learning); position: absolute; left: 18px; top: 18px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 999px; background: linear-gradient(135deg, #bf5518, #9f3e0b); color: #fff; font-size: .9375rem; font-weight: 800; line-height: 1; }
+.learning-list h3 { margin: 0; font-size: 1.0625rem; line-height: 1.6; }
+.learning-list p { margin: 6px 0 0; color: #625249; font-size: .9375rem; line-height: 1.85; }
+.learning-toggle > summary { position: relative; display: block; padding: 18px 56px 16px 20px; border: 2px solid var(--primary-dark); border-radius: 22px; background: #fff; list-style: none; cursor: pointer; }
+.learning-toggle > summary::-webkit-details-marker { display: none; }
+.learning-toggle > summary h2 { margin: 0; font-size: 22px; line-height: 1.5; }
+.learning-toggle > summary::after { content: ""; position: absolute; right: 24px; top: 50%; width: 10px; height: 10px; border-right: 2.5px solid var(--primary-dark); border-bottom: 2.5px solid var(--primary-dark); transform: translateY(-70%) rotate(45deg); transition: transform .18s ease; }
+.learning-toggle[open] > summary::after { transform: translateY(-30%) rotate(-135deg); }
+.learning-hint { display: block; margin-top: 4px; color: var(--primary-dark); font-size: .8125rem; font-weight: 700; }
+.learning-toggle[open] .learning-hint { display: none; }
+.learning-intro { margin: 16px 0; color: #625249; line-height: 1.9; }
+@media (prefers-reduced-motion: reduce) { .learning-toggle > summary::after { transition: none; } }
